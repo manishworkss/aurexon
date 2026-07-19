@@ -1,0 +1,91 @@
+.auroraWrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background-color: var(--background);
+}
+
+.auroraContainer {
+  position: absolute;
+  inset: 0;
+  filter: blur(80px);
+  opacity: 0.5;
+  transition: opacity 1s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .auroraContainer {
+    opacity: 0.3;
+  }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  animation: aurora-movement 20s infinite alternate ease-in-out;
+}
+
+/* Beautiful soft, professional colors for AI/Tech feel */
+.blob1 {
+  width: 40vw;
+  height: 40vw;
+  background: rgba(120, 160, 255, 0.4);
+  top: -10%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.blob2 {
+  width: 50vw;
+  height: 50vw;
+  background: rgba(200, 180, 255, 0.3);
+  bottom: -20%;
+  right: -10%;
+  animation-delay: -5s;
+}
+
+.blob3 {
+  width: 35vw;
+  height: 35vw;
+  background: rgba(140, 220, 255, 0.3);
+  top: 40%;
+  left: 60%;
+  animation-delay: -10s;
+}
+
+.blob4 {
+  width: 45vw;
+  height: 45vw;
+  background: rgba(220, 240, 255, 0.4);
+  bottom: 10%;
+  left: -20%;
+  animation-delay: -15s;
+}
+
+@keyframes aurora-movement {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(5vw, 5vh) scale(1.1) rotate(10deg);
+  }
+  66% {
+    transform: translate(-5vw, 10vh) scale(0.9) rotate(-5deg);
+  }
+  100% {
+    transform: translate(-10vw, -5vh) scale(1) rotate(0deg);
+  }
+}
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}

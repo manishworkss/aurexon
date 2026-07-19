@@ -21,13 +21,13 @@ export const metadata = {
   },
 }
 
-import ParticleBackground from '@/components/ParticleBackground'
+import AuroraBackground from '@/components/AuroraBackground'
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
-        <ParticleBackground />
+        <AuroraBackground />
         <Navbar />
         {children}
         <Footer />
