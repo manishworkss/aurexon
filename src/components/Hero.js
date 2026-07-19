@@ -49,98 +49,95 @@ function TypeWriter() {
   );
 }
 
-/* Interactive grid items */
-function GridGraphic() {
+/* Wireframe Grid Graphic */
+function WireframeGraphic() {
   return (
-    <div className={styles.gridContainer}>
-      {/* Code snippet card */}
-      <motion.div
-        className={`${styles.gridItem} ${styles.codeCard}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
+    <div className={styles.wireframeWrapper}>
+      <div className={styles.gridBackground}></div>
+      
+      {/* Code Block (Top Left) */}
+      <motion.div 
+        className={`${styles.wireItem} ${styles.wireCode}`}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        whileHover={{ scale: 1.05 }}
       >
-        <div className={styles.cardLabel}>&lt;/&gt;</div>
-        <pre className={styles.miniCode}>
-          <span className={styles.kw}>@Service</span>{'\n'}
-          <span className={styles.kw}>public class</span>{' '}
-          <span className={styles.cls}>AIEngine</span> {'{\n'}
-          {'  '}<span className={styles.mt}>analyze</span>(data);{'\n'}
-          {'}'}
-        </pre>
-      </motion.div>
-
-      {/* API endpoint card */}
-      <motion.div
-        className={`${styles.gridItem} ${styles.apiCard}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.65 }}
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
-      >
-        <div className={styles.apiMethod}>GET</div>
-        <div className={styles.apiPath}>/api/v1/predict</div>
-      </motion.div>
-
-      {/* Stats card */}
-      <motion.div
-        className={`${styles.gridItem} ${styles.statsCard}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
-      >
-        <div className={styles.statNumber}>200+</div>
-        <div className={styles.statLabel}>DSA Problems</div>
-      </motion.div>
-
-      {/* Architecture card */}
-      <motion.div
-        className={`${styles.gridItem} ${styles.archCard}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.95 }}
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
-      >
-        <div className={styles.archDiagram}>
-          <div className={styles.archNode}>Client</div>
-          <div className={styles.archArrow}>→</div>
-          <div className={styles.archNode}>API</div>
-          <div className={styles.archArrow}>→</div>
-          <div className={styles.archNode}>AI</div>
+        <div className={styles.codeTag}>&lt;/&gt;</div>
+        <div className={styles.codeLines}>
+          <div className={styles.line} style={{ width: '40%' }}></div>
+          <div className={styles.line} style={{ width: '80%' }}></div>
+          <div className={styles.line} style={{ width: '60%' }}></div>
+          <div className={styles.line} style={{ width: '50%' }}></div>
         </div>
+        <div className={styles.codeTag}>/&gt;</div>
+        <div className={styles.codeLines} style={{ marginTop: '0.5rem' }}>
+          <div className={styles.line} style={{ width: '70%' }}></div>
+          <div className={styles.line} style={{ width: '50%' }}></div>
+        </div>
+        <div className={styles.codeTag}>&lt;/&gt;</div>
       </motion.div>
 
-      {/* Tech stack pills */}
-      <motion.div
-        className={`${styles.gridItem} ${styles.techCard}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.1 }}
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
+      {/* UI Elements (Top Right) */}
+      <motion.div 
+        className={`${styles.wireItem} ${styles.wireUI}`}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        whileHover={{ y: -5 }}
       >
-        <span className={styles.techPill}>Java</span>
-        <span className={styles.techPill}>Spring Boot</span>
-        <span className={styles.techPill}>AI/ML</span>
+        <div className={styles.wireButton}>button</div>
+        <div className={styles.wireInput}>input</div>
       </motion.div>
 
-      {/* Terminal card */}
-      <motion.div
-        className={`${styles.gridItem} ${styles.terminalCard}`}
+      {/* Isometric Cube (Center) */}
+      <motion.div 
+        className={`${styles.wireItem} ${styles.wireCube}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.25 }}
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        animate={{ y: [0, -10, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
       >
-        <div className={styles.terminalHeader}>
-          <span className={styles.termDot} style={{ background: '#ff5f57' }}></span>
-          <span className={styles.termDot} style={{ background: '#febc2e' }}></span>
-          <span className={styles.termDot} style={{ background: '#28c840' }}></span>
-        </div>
-        <div className={styles.terminalBody}>
-          <span className={styles.termPrompt}>$</span> mvn spring-boot:run
-        </div>
+        <svg width="64" height="74" viewBox="0 0 64 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 0L64 18.5V55.5L32 74L0 55.5V18.5L32 0Z" fill="#F0F0F0" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
+          <path d="M32 37L64 18.5M32 37L0 18.5M32 37V74" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
+          <path d="M32 0L0 18.5L32 37L64 18.5L32 0Z" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
+          <path d="M0 18.5V55.5L32 74V37L0 18.5Z" fill="#FAFAFA" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
+        </svg>
+      </motion.div>
+
+      {/* Card (Bottom Left) */}
+      <motion.div 
+        className={`${styles.wireItem} ${styles.wireCard}`}
+        initial={{ opacity: 0, y: 20, rotate: -5 }}
+        animate={{ opacity: 1, y: 0, rotate: 0 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        whileHover={{ scale: 1.05 }}
+      >
+        <div className={styles.cardImg}></div>
+        <div className={styles.line} style={{ width: '90%', marginBottom: '8px' }}></div>
+        <div className={styles.line} style={{ width: '60%', marginBottom: '16px' }}></div>
+        <div className={styles.cardBtn}></div>
+      </motion.div>
+
+      {/* Tree Diagram (Bottom Right) */}
+      <motion.div 
+        className={`${styles.wireItem} ${styles.wireTree}`}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 1.0 }}
+        whileHover={{ y: -5 }}
+      >
+        <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Connecting Lines */}
+          <path d="M50 20V40 M50 40H20 V50 M50 40H80 V50 M50 40V50" stroke="#D0D0D0" strokeWidth="2"/>
+          {/* Nodes */}
+          <rect x="38" y="0" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
+          <rect x="8" y="50" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
+          <rect x="38" y="50" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
+          <rect x="68" y="50" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
+        </svg>
       </motion.div>
     </div>
   );
@@ -204,7 +201,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <GridGraphic />
+      <WireframeGraphic />
 
       {/* Background gradient blobs */}
       <div className={styles.blob1}></div>

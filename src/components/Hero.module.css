@@ -89,178 +89,188 @@
   gap: 1rem;
 }
 
-/* ─── Right side: Interactive grid graphic ─── */
-.gridContainer {
+/* ─── Right side: Wireframe Graphic ─── */
+.wireframeWrapper {
   flex: 1;
   max-width: 500px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  height: 500px;
   position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
 }
 
-.gridItem {
-  padding: 1.25rem;
-  border: 1px solid var(--border-color);
-  border-radius: 14px;
-  background: var(--background);
-  transition: all 0.3s ease;
-  cursor: default;
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  background-size: 33.33% 33.33%;
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px);
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Code snippet card */
-.codeCard {
-  grid-column: span 2;
+/* Adding the right and bottom closing borders for the grid */
+.gridBackground::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-.cardLabel {
+@media (prefers-color-scheme: dark) {
+  .gridBackground {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  }
+  .gridBackground::after {
+    border-color: rgba(255,255,255,0.06);
+  }
+}
+
+.wireItem {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+/* Base wireframe element styling */
+.line {
+  height: 4px;
+  background: var(--border-color-hover);
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.codeTag {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--foreground-muted);
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.codeLines {
+  width: 100%;
+  padding-left: 1rem;
+}
+
+/* Specific Placements */
+.wireCode {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+.wireUI {
+  grid-column: 3;
+  grid-row: 1;
+  gap: 10px;
+}
+
+.wireButton {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--foreground-muted);
-  margin-bottom: 0.75rem;
-  opacity: 0.6;
-}
-
-.miniCode {
-  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-  font-size: 0.78rem;
-  line-height: 1.7;
-  color: var(--foreground-muted);
-  margin: 0;
-}
-
-.kw { color: #569cd6; }
-.cls { color: #4ec9b0; }
-.mt { color: #dcdcaa; }
-
-@media (prefers-color-scheme: light) {
-  .kw { color: #0550ae; }
-  .cls { color: #116329; }
-  .mt { color: #8250df; }
-}
-
-/* API card */
-.apiCard {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.apiMethod {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #22c55e;
-  padding: 0.2rem 0.5rem;
-  border: 1px solid #22c55e40;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color-hover);
   border-radius: 4px;
-  letter-spacing: 0.05em;
 }
 
-.apiPath {
-  font-family: 'SF Mono', monospace;
-  font-size: 0.78rem;
+.wireInput {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.75rem;
   color: var(--foreground-muted);
+  border: 1px solid var(--border-color-hover);
+  border-radius: 4px;
+  background: transparent;
 }
 
-/* Stats card */
-.statsCard {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@media (prefers-color-scheme: dark) {
+  .wireButton { background: rgba(255,255,255,0.05); }
 }
 
-.statNumber {
-  font-size: 1.75rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+.wireCube {
+  grid-column: 2;
+  grid-row: 2;
 }
 
-.statLabel {
-  font-size: 0.78rem;
-  color: var(--foreground-muted);
-  font-weight: 500;
+.wireCube svg path {
+  stroke: var(--border-color-hover);
 }
 
-/* Architecture card */
-.archCard {
-  grid-column: span 2;
+.wireCube svg path[fill="#F0F0F0"] { fill: rgba(0,0,0,0.02); }
+.wireCube svg path[fill="#E5E5E5"] { fill: rgba(0,0,0,0.05); }
+.wireCube svg path[fill="#FAFAFA"] { fill: rgba(0,0,0,0.08); }
+
+@media (prefers-color-scheme: dark) {
+  .wireCube svg path[fill="#F0F0F0"] { fill: rgba(255,255,255,0.02); }
+  .wireCube svg path[fill="#E5E5E5"] { fill: rgba(255,255,255,0.05); }
+  .wireCube svg path[fill="#FAFAFA"] { fill: rgba(255,255,255,0.08); }
 }
 
-.archDiagram {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.archNode {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border-color);
+.wireCard {
+  grid-column: 1;
+  grid-row: 3;
+  border: 1px solid var(--border-color-hover);
   border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--foreground);
+  margin: 1rem;
+  padding: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
   background: var(--background);
 }
 
-.archArrow {
-  color: var(--foreground-muted);
-  font-size: 1.2rem;
+.cardImg {
+  width: 100%;
+  height: 40px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
 
-/* Tech card */
-.techCard {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.cardBtn {
+  width: 50%;
+  height: 16px;
+  border: 1px solid var(--border-color-hover);
+  border-radius: 4px;
 }
 
-.techPill {
-  padding: 0.3rem 0.65rem;
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--foreground);
+@media (prefers-color-scheme: dark) {
+  .cardImg { background: rgba(255,255,255,0.05); }
 }
 
-/* Terminal card */
-.terminalCard {
-  padding: 0;
-  overflow: hidden;
-  background: #1a1a1a;
-  border-color: #2a2a2a;
+.wireTree {
+  grid-column: 3;
+  grid-row: 3;
 }
 
-.terminalHeader {
-  display: flex;
-  gap: 5px;
-  padding: 10px 12px;
-  background: #252525;
-  border-bottom: 1px solid #2a2a2a;
+.wireTree svg path,
+.wireTree svg rect {
+  stroke: var(--border-color-hover);
 }
 
-.termDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.wireTree svg rect {
+  fill: rgba(0,0,0,0.05);
 }
 
-.terminalBody {
-  padding: 0.85rem 1rem;
-  font-family: 'SF Mono', monospace;
-  font-size: 0.78rem;
-  color: #d4d4d4;
-}
-
-.termPrompt {
-  color: #22c55e;
-  margin-right: 0.5rem;
+@media (prefers-color-scheme: dark) {
+  .wireTree svg rect { fill: rgba(255,255,255,0.05); }
 }
 
 /* ─── Background blobs ─── */

@@ -21,10 +21,13 @@ export const metadata = {
   },
 }
 
+import ParticleBackground from '@/components/ParticleBackground'
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
+        <ParticleBackground />
         <Navbar />
         {children}
         <Footer />
