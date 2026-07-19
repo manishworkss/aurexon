@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Navbar.module.css';
 
@@ -23,10 +24,26 @@ function LinkedinIcon({ size = 20 }) {
   );
 }
 
+const navItems = [
+  { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
+];
+
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <motion.header
-      className={styles.header}
+      className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -35,20 +52,59 @@ export default function Navbar() {
         <Link href="/" className={styles.logo}>
           M.K.
         </Link>
+
+        {/* Desktop nav */}
         <nav className={styles.navLinks}>
-          <Link href="#about" className={styles.link}>About</Link>
-          <Link href="#projects" className={styles.link}>Projects</Link>
-          <Link href="#experience" className={styles.link}>Experience</Link>
+          {navItems.map((item) => (
+            <Link key={item.label} href={item.href} className={styles.link}>
+              {item.label}
+            </Link>
+          ))}
         </nav>
-        <div className={styles.socials}>
-          <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
-            <GithubIcon size={20} />
-          </a>
-          <a href="https://linkedin.com/in/manish-kumar" target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
-            <LinkedinIcon size={20} />
-          </a>
+
+        <div className={styles.right}>
+          <div className={styles.socials}>
+            <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
+              <GithubIcon size={20} />
+            </a>
+            <a href="https://linkedin.com/in/manish-kumar" target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
+              <LinkedinIcon size={20} />
+            </a>
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className={`${styles.hamburger} ${mobileOpen ? styles.active : ''}`}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <motion.nav
+          className={styles.mobileMenu}
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          transition={{ duration: 0.25 }}
+        >
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={styles.mobileLink}
+              onClick={() => setMobileOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </motion.nav>
+      )}
     </motion.header>
   );
 }

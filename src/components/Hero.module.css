@@ -3,42 +3,85 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
-  padding-top: 6rem;
+  gap: 5rem;
+  padding-top: 7rem;
+  position: relative;
+  overflow: hidden;
 }
 
+/* ─── Left content ─── */
 .content {
   flex: 1;
-  max-width: 560px;
+  max-width: 580px;
+  position: relative;
+  z-index: 2;
 }
 
-.greeting {
-  font-size: 1rem;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--foreground-muted);
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 .name {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.75rem;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 1rem;
 }
 
-.title {
-  font-size: 1.25rem;
+.roleWrapper {
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--foreground-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+  min-height: 2.2rem;
+}
+
+.typedText {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.cursor {
+  color: var(--foreground-muted);
+  animation: blink 0.8s step-end infinite;
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .description {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--foreground-muted);
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
 }
 
 .actions {
@@ -46,47 +89,214 @@
   gap: 1rem;
 }
 
-/* Code block graphic */
-.graphic {
+/* ─── Right side: Interactive grid graphic ─── */
+.gridContainer {
   flex: 1;
-  max-width: 480px;
-  display: flex;
-  justify-content: flex-end;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
-.codeBlock {
-  width: 100%;
-  background: #1a1a1a;
+.gridItem {
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
   border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-  border: 1px solid #2a2a2a;
+  background: var(--background);
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.codeHeader {
+/* Code snippet card */
+.codeCard {
+  grid-column: span 2;
+}
+
+.cardLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--foreground-muted);
+  margin-bottom: 0.75rem;
+  opacity: 0.6;
+}
+
+.miniCode {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--foreground-muted);
+  margin: 0;
+}
+
+.kw { color: #569cd6; }
+.cls { color: #4ec9b0; }
+.mt { color: #dcdcaa; }
+
+@media (prefers-color-scheme: light) {
+  .kw { color: #0550ae; }
+  .cls { color: #116329; }
+  .mt { color: #8250df; }
+}
+
+/* API card */
+.apiCard {
   display: flex;
-  gap: 6px;
-  padding: 14px 16px;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.apiMethod {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #22c55e;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #22c55e40;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.apiPath {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--foreground-muted);
+}
+
+/* Stats card */
+.statsCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.statNumber {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  color: var(--foreground-muted);
+  font-weight: 500;
+}
+
+/* Architecture card */
+.archCard {
+  grid-column: span 2;
+}
+
+.archDiagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.archNode {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--foreground);
+  background: var(--background);
+}
+
+.archArrow {
+  color: var(--foreground-muted);
+  font-size: 1.2rem;
+}
+
+/* Tech card */
+.techCard {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.techPill {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Terminal card */
+.terminalCard {
+  padding: 0;
+  overflow: hidden;
+  background: #1a1a1a;
+  border-color: #2a2a2a;
+}
+
+.terminalHeader {
+  display: flex;
+  gap: 5px;
+  padding: 10px 12px;
   background: #252525;
   border-bottom: 1px solid #2a2a2a;
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
+.termDot {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
 }
 
-.code {
-  padding: 1.5rem;
-  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-  font-size: 0.85rem;
-  line-height: 1.7;
+.terminalBody {
+  padding: 0.85rem 1rem;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.78rem;
   color: #d4d4d4;
-  overflow-x: auto;
-  margin: 0;
 }
 
+.termPrompt {
+  color: #22c55e;
+  margin-right: 0.5rem;
+}
+
+/* ─── Background blobs ─── */
+.blob1 {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 180, 220, 0.08) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  animation: floatBlob 10s ease-in-out infinite;
+}
+
+.blob2 {
+  position: absolute;
+  bottom: 10%;
+  left: -5%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 220, 200, 0.06) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+  animation: floatBlob 12s ease-in-out infinite reverse;
+}
+
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(15px, -20px) scale(1.04); }
+  66% { transform: translate(-10px, 10px) scale(0.97); }
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -100,15 +310,32 @@
   }
 
   .name {
-    font-size: 2.5rem;
+    font-size: 3rem;
+  }
+
+  .description {
+    max-width: 100%;
   }
 
   .actions {
     justify-content: center;
   }
 
-  .graphic {
+  .gridContainer {
     max-width: 100%;
-    justify-content: center;
+  }
+
+  .blob1, .blob2 {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .roleWrapper {
+    font-size: 1.1rem;
   }
 }
