@@ -37,6 +37,22 @@ export default function About() {
           to open-source projects. Always looking for interesting problems to
           pick apart and ship something useful.
         </p>
+
+        {/* Highlight Credential Pills */}
+        <div className={styles.highlightPills}>
+          <a href="#certifications" className={styles.certBadgePill}>
+            🏅 NPTEL Certified (IIT Kharagpur)
+          </a>
+          <a href="#certifications" className={styles.certBadgePill}>
+            🏅 HackerRank React Developer
+          </a>
+          <a href="#certifications" className={styles.certBadgePill}>
+            🏅 HackerRank Software Engineer
+          </a>
+          <a href="#certifications" className={styles.certBadgePill}>
+            🏅 CodeAlpha Java Intern (LOR)
+          </a>
+        </div>
       </motion.div>
 
       {/* Education Section */}
