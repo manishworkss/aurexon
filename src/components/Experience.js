@@ -25,9 +25,9 @@ function ExternalLinkIcon({ size = 14 }) {
 
 const experiences = [
   {
-    role: 'Web Developer — Freelance',
     company: 'M.K.R. College Website',
-    period: 'January 2026 – Present',
+    role: 'Freelance Web Developer',
+    period: 'Jan 2026 – Present',
     live: 'https://mkrcollege.com',
     image: '/experience/mkrcollege.png',
     points: [
@@ -37,9 +37,9 @@ const experiences = [
     ],
   },
   {
-    role: 'Web Developer — Freelance',
     company: 'Sudhakar VFX & Animation Portfolio',
-    period: 'March 2026 – Present',
+    role: 'Freelance Web Developer',
+    period: 'Mar 2026 – Present',
     live: 'https://sukuae.in',
     image: '/experience/sukuae.png',
     points: [
@@ -49,9 +49,9 @@ const experiences = [
     ],
   },
   {
-    role: 'Web Developer — Freelance',
     company: 'Rudra Gupta AI/ML Portfolio',
-    period: 'February 2026 – Present',
+    role: 'Freelance Web Developer',
+    period: 'Feb 2026 – Present',
     live: 'https://rudra-gupta.vercel.app/',
     image: '/experience/rudra.png',
     points: [
@@ -61,9 +61,9 @@ const experiences = [
     ],
   },
   {
-    role: 'Java Development Intern',
     company: 'CodeAlpha',
-    period: 'October 2025 – November 2025',
+    role: 'Java Development Intern',
+    period: 'Oct 2025 – Nov 2025',
     live: null,
     image: null,
     points: [
@@ -83,8 +83,8 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.45 } },
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
 };
 
 export default function Experience() {
@@ -117,24 +117,26 @@ export default function Experience() {
             </div>
 
             <div className={styles.content}>
-              <div className={styles.meta}>
-                <h3 className={styles.role}>{exp.role}</h3>
-                <span className={styles.period}>{exp.period}</span>
-              </div>
+              <div className={styles.cardHeader}>
+                <div className={styles.headerLeft}>
+                  <h3 className={styles.companyName}>{exp.company}</h3>
+                  <span className={styles.roleTag}>{exp.role}</span>
+                </div>
 
-              <div className={styles.companyRow}>
-                <p className={styles.company}>{exp.company}</p>
-                {exp.live && (
-                  <a
-                    href={exp.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.liveBtn}
-                  >
-                    <span>Visit Live Site</span>
-                    <ExternalLinkIcon size={14} />
-                  </a>
-                )}
+                <div className={styles.headerRight}>
+                  <span className={styles.period}>{exp.period}</span>
+                  {exp.live && (
+                    <a
+                      href={exp.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.visitBtn}
+                    >
+                      <span>Live Site</span>
+                      <ExternalLinkIcon size={13} />
+                    </a>
+                  )}
+                </div>
               </div>
 
               {exp.image && (
@@ -148,7 +150,7 @@ export default function Experience() {
                     src={exp.image}
                     alt={exp.company}
                     fill
-                    sizes="(max-width: 768px) 100vw, 700px"
+                    sizes="(max-width: 768px) 100vw, 800px"
                     className={styles.previewImage}
                   />
                 </a>
