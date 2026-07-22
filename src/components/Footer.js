@@ -111,7 +111,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Manish Kumar. All rights reserved.
           </p>
           <p className={styles.builtText}>
-            Built with Next.js, Framer Motion & Tailwind CSS
+            Designed, Built & Deployed Solo by Manish Kumar
           </p>
         </div>
       </div>
