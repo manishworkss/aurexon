@@ -1,7 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Experience.module.css';
 
 function BriefcaseIcon({ size = 18 }) {
@@ -23,13 +24,22 @@ function ExternalLinkIcon({ size = 14 }) {
   );
 }
 
+function EyeIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
 const experiences = [
   {
     company: 'M.K.R. College Website',
     role: 'Freelance Web Developer',
     period: 'Jan 2026 – Present',
     live: 'https://mkrcollege.com',
-    image: '/experience/mkrcollege.png',
+    image: '/experience/mkrcollege_clean.png',
     points: [
       'Architected and deployed a 12-page production college website (mkrcollege.com) using React.js, Node.js, Express.js, MongoDB, and Tailwind CSS — serving 300+ monthly visitors.',
       'Built admin-managed notice board, faculty directory, admit-card downloads, gallery, and event modules with 15+ RESTful API endpoints backed by indexed MongoDB collections.',
@@ -41,14 +51,13 @@ const experiences = [
     role: 'Freelance Web Developer',
     period: 'Mar 2026 – Present',
     live: 'https://sukuae.in',
-    image: '/experience/sukuae.png',
+    image: '/experience/sukuae_clean.png',
     points: [
       'Designed and developed a custom high-performance creative portfolio (sukuae.in) for a VFX & Animation artist, increasing monthly site visitors from 0 to 150+ within 30 days.',
       'Optimized 200+ media assets, video montages, and image galleries with lazy loading and WebP formats, accelerating initial page render to under 1.8s.',
       'Engineered custom dark-theme glassmorphic cards and interactive project galleries tailored to visual storytelling.',
     ],
   },
-
   {
     company: 'CodeAlpha',
     role: 'Java Development Intern',
@@ -77,6 +86,8 @@ const itemVariants = {
 };
 
 export default function Experience() {
+  const [activeHoverIndex, setActiveHoverIndex] = useState(null);
+
   return (
     <section className={styles.experienceSection} id="experience">
       <motion.div
@@ -105,7 +116,11 @@ export default function Experience() {
               {index < experiences.length - 1 && <div className={styles.line}></div>}
             </div>
 
-            <div className={styles.content}>
+            <div
+              className={styles.content}
+              onMouseEnter={() => setActiveHoverIndex(index)}
+              onMouseLeave={() => setActiveHoverIndex(null)}
+            >
               <div className={styles.cardHeader}>
                 <div className={styles.headerLeft}>
                   <h3 className={styles.companyName}>{exp.company}</h3>
@@ -128,22 +143,43 @@ export default function Experience() {
                 </div>
               </div>
 
+              {/* Hover Badge Trigger when image is available */}
               {exp.image && (
-                <a
-                  href={exp.live || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.previewContainer}
-                >
-                  <Image
-                    src={exp.image}
-                    alt={exp.company}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 800px"
-                    className={styles.previewImage}
-                  />
-                </a>
+                <div className={styles.hoverPromptBar}>
+                  <span className={styles.hoverPromptPill}>
+                    <EyeIcon size={14} />
+                    <span>{activeHoverIndex === index ? 'Click preview to visit website' : 'Hover cursor here to preview site'}</span>
+                  </span>
+                </div>
               )}
+
+              {/* Smooth Animated Website Preview (Revealed on Hover) */}
+              <AnimatePresence>
+                {exp.image && activeHoverIndex === index && (
+                  <motion.a
+                    href={exp.live || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.previewContainer}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 240 }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Image
+                      src={exp.image}
+                      alt={exp.company}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 800px"
+                      className={styles.previewImage}
+                    />
+                    <div className={styles.overlayBadge}>
+                      <span>Click to open live site ↗</span>
+                    </div>
+                  </motion.a>
+                )}
+              </AnimatePresence>
 
               <ul className={styles.points}>
                 {exp.points.map((point, i) => (

@@ -73,6 +73,13 @@
   padding: 1.75rem;
   margin-bottom: 2rem;
   box-shadow: 0 6px 20px rgba(35, 45, 32, 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.content:hover {
+  border-color: var(--forest-dark);
+  box-shadow: 0 10px 28px rgba(35, 45, 32, 0.08);
 }
 
 .cardHeader {
@@ -81,7 +88,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .headerLeft {
@@ -144,17 +151,43 @@
   box-shadow: 0 4px 12px rgba(35, 45, 32, 0.2);
 }
 
+/* Hover Trigger Prompt Bar */
+.hoverPromptBar {
+  margin-bottom: 0.85rem;
+}
+
+.hoverPromptPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  background-color: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.content:hover .hoverPromptPill {
+  background-color: var(--forest-dark);
+  color: var(--cream-light);
+  border-color: var(--forest-dark);
+}
+
+/* Hover Revealed Preview Container */
 .previewContainer {
   display: block;
   width: 100%;
-  height: 220px;
   position: relative;
   overflow: hidden;
   border-radius: 14px;
   border: 1.5px solid var(--cream-border);
   margin-bottom: 1.25rem;
   background-color: var(--forest-dark);
-  box-shadow: 0 6px 20px rgba(35, 45, 32, 0.08);
+  box-shadow: 0 8px 24px rgba(35, 45, 32, 0.12);
+  cursor: pointer;
 }
 
 .previewImage {
@@ -167,6 +200,21 @@
 
 .previewContainer:hover .previewImage {
   transform: scale(1.03);
+}
+
+.overlayBadge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: rgba(35, 45, 32, 0.88);
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  pointer-events: none;
 }
 
 .points {
@@ -204,8 +252,5 @@
   .headerRight {
     width: 100%;
     justify-content: space-between;
-  }
-  .previewContainer {
-    height: 160px;
   }
 }
