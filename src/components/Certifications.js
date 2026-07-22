@@ -121,9 +121,6 @@ export default function Certifications() {
               Verified Credentials from IIT Kharagpur, HackerRank & Industry Programs
             </p>
           </div>
-          <div className={styles.certCountBadge}>
-            <span>{certificates.length} VERIFIED CERTIFICATES</span>
-          </div>
         </div>
       </motion.div>
 
