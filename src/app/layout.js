@@ -22,6 +22,14 @@ const shantell = Shantell_Sans({
   variable: '--font-shantell',
 })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: '#D8B29A',
+}
+
 export const metadata = {
   title: 'Manish Kumar | Java Backend & AI Developer',
   description: 'Portfolio of Manish Kumar — Java Backend Developer & AI Enthusiast. Building robust, scalable backend systems and intelligent AI solutions with Spring Boot, Java, and modern web technologies.',

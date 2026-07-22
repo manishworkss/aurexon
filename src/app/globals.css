@@ -31,6 +31,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
   background: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -41,13 +42,14 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
   line-height: 1.6;
   padding: 1.5rem;
 }
 
 @media (max-width: 768px) {
   body {
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
 }
 
@@ -63,6 +65,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   letter-spacing: -0.015em;
   text-transform: uppercase;
+}
+
+p, span, h1, h2, h3, h4, h5, h6, a, li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Prevent iOS Safari auto-zoom on input focus */
+input, select, textarea {
+  font-size: 16px !important;
+  touch-action: manipulation;
 }
 
 /* Custom scrollbar */
