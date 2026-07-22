@@ -121,50 +121,19 @@ export default function Experience() {
               onMouseEnter={() => setActiveHoverIndex(index)}
               onMouseLeave={() => setActiveHoverIndex(null)}
             >
-              <div className={styles.cardHeader}>
-                <div className={styles.headerLeft}>
-                  <h3 className={styles.companyName}>{exp.company}</h3>
-                  <span className={styles.roleTag}>{exp.role}</span>
-                </div>
-
-                <div className={styles.headerRight}>
-                  <span className={styles.period}>{exp.period}</span>
-                  {exp.live && (
-                    <a
-                      href={exp.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.visitBtn}
-                    >
-                      <span>Live Site</span>
-                      <ExternalLinkIcon size={13} />
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              {/* Hover Badge Trigger when image is available */}
-              {exp.image && (
-                <div className={styles.hoverPromptBar}>
-                  <span className={styles.hoverPromptPill}>
-                    <EyeIcon size={14} />
-                    <span>{activeHoverIndex === index ? 'Click preview to visit website' : 'Hover cursor here to preview site'}</span>
-                  </span>
-                </div>
-              )}
-
-              {/* Smooth Animated Website Preview (Revealed on Hover) */}
-              <AnimatePresence>
-                {exp.image && activeHoverIndex === index && (
+              <AnimatePresence mode="wait">
+                {exp.image && activeHoverIndex === index ? (
+                  /* Hover State: Full Website Picture ONLY (No Text Explanation) */
                   <motion.a
+                    key="image-only"
                     href={exp.live || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.previewContainer}
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 240 }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                    className={styles.fullImageCard}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.25 }}
                   >
                     <Image
                       src={exp.image}
@@ -172,20 +141,60 @@ export default function Experience() {
                       fill
                       priority
                       sizes="(max-width: 768px) 100vw, 800px"
-                      className={styles.previewImage}
+                      className={styles.fullPreviewImage}
                     />
                     <div className={styles.overlayBadge}>
                       <span>Click to open live site ↗</span>
                     </div>
                   </motion.a>
+                ) : (
+                  /* Default State: Text Explanation & Points */
+                  <motion.div
+                    key="text-explanation"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className={styles.cardHeader}>
+                      <div className={styles.headerLeft}>
+                        <h3 className={styles.companyName}>{exp.company}</h3>
+                        <span className={styles.roleTag}>{exp.role}</span>
+                      </div>
+
+                      <div className={styles.headerRight}>
+                        <span className={styles.period}>{exp.period}</span>
+                        {exp.live && (
+                          <a
+                            href={exp.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.visitBtn}
+                          >
+                            <span>Live Site</span>
+                            <ExternalLinkIcon size={13} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    {exp.image && (
+                      <div className={styles.hoverPromptBar}>
+                        <span className={styles.hoverPromptPill}>
+                          <EyeIcon size={14} />
+                          <span>Hover cursor to view website picture</span>
+                        </span>
+                      </div>
+                    )}
+
+                    <ul className={styles.points}>
+                      {exp.points.map((point, i) => (
+                        <li key={i} className={styles.point}>{point}</li>
+                      ))}
+                    </ul>
+                  </motion.div>
                 )}
               </AnimatePresence>
-
-              <ul className={styles.points}>
-                {exp.points.map((point, i) => (
-                  <li key={i} className={styles.point}>{point}</li>
-                ))}
-              </ul>
             </div>
           </motion.div>
         ))}
