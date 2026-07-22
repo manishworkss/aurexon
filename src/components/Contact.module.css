@@ -29,61 +29,45 @@
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2.25rem;
+  align-items: start;
 }
 
-/* Left & Right Glassmorphic Cards */
-.leftCard,
-.rightCard {
-  background-color: var(--cream-light);
-  border: 1.5px solid var(--cream-border);
-  border-radius: 24px;
-  padding: 2.25rem 2rem;
+/* Left Column: Direct Channels */
+.leftColumn {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 6px 20px rgba(35, 45, 32, 0.04);
 }
 
-.cardTitle {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--forest-dark);
-  margin-bottom: 1.75rem;
-  letter-spacing: -0.01em;
-}
-
-/* Left Channels List */
 .channelsList {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  margin-bottom: 2rem;
-  flex: 1;
 }
 
 .channelItem {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  background-color: var(--cream-card);
+  gap: 1.1rem;
+  padding: 1.1rem 1.35rem;
+  background-color: var(--cream-light);
   border: 1.5px solid var(--cream-border);
-  border-radius: 16px;
+  border-radius: 20px;
   text-decoration: none;
   transition: all 0.2s ease;
-  position: relative;
+  box-shadow: 0 4px 14px rgba(35, 45, 32, 0.03);
 }
 
 .channelItem:hover {
   transform: translateY(-2px);
   border-color: var(--forest-dark);
-  box-shadow: 0 6px 16px rgba(35, 45, 32, 0.08);
+  box-shadow: 0 8px 24px rgba(35, 45, 32, 0.08);
 }
 
 .iconCircle {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background-color: var(--forest-dark);
   color: var(--cream-light);
@@ -91,6 +75,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(35, 45, 32, 0.15);
 }
 
 .channelInfo {
@@ -98,8 +83,6 @@
   flex-direction: column;
   gap: 0.15rem;
   flex: 1;
-
-  /* Constrain horizontal size so text overflow truncates cleanly */
   min-width: 0;
 }
 
@@ -132,42 +115,36 @@
   color: var(--forest-dark);
 }
 
-.socialQuickIcons {
+/* Right Column: Send a Message Form Card */
+.rightCard {
+  background-color: var(--cream-light);
+  border: 1.5px solid var(--cream-border);
+  border-radius: 24px;
+  padding: 2.25rem 2rem;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: auto;
-  padding-top: 0.5rem;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(35, 45, 32, 0.04);
 }
 
-.quickCircle {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: var(--forest-dark);
-  color: var(--cream-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--forest-dark);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-.quickCircle:hover {
-  transform: translateY(-2px);
-  background-color: var(--forest-medium);
-}
-
-/* Right Form Inputs */
 .contactForm {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.25rem;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .formLabel {
@@ -183,7 +160,7 @@
   padding: 0.85rem 1.1rem;
   background-color: var(--cream-card);
   border: 1.5px solid var(--cream-border);
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-dark);
@@ -196,7 +173,8 @@
 .formSelect:focus,
 .formTextarea:focus {
   border-color: var(--forest-dark);
-  box-shadow: 0 0 0 3px rgba(35, 45, 32, 0.1);
+  box-shadow: 0 0 0 3.5px rgba(35, 45, 32, 0.1);
+  background-color: var(--cream-light);
 }
 
 .formSelect {
@@ -204,7 +182,7 @@
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23232D20' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
+  background-position: right 1.1rem center;
   padding-right: 2.5rem;
 }
 
@@ -220,13 +198,12 @@
   color: var(--cream-light);
   border: none;
   border-radius: var(--radius-pill);
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-top: 0.5rem;
-
+  margin-top: 0.4rem;
   box-shadow: 0 6px 18px rgba(35, 45, 32, 0.15);
 }
 
@@ -237,7 +214,7 @@
 }
 
 @media (max-width: 900px) {
-  .sectionContainer {
+  .contactSection {
     padding: 2rem 1.5rem;
     border-radius: 28px;
   }

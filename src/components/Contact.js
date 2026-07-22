@@ -113,7 +113,9 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
       >
         <h2 className={styles.heading}>GET IN TOUCH</h2>
-        <p className={styles.subtitle}>Open to full-time engineering roles & freelance opportunities</p>
+        <p className={styles.subtitle}>
+          Have a project in mind or looking for a Java & AI engineer? Let&apos;s connect.
+        </p>
       </motion.div>
 
       <motion.div
@@ -123,10 +125,8 @@ export default function Contact() {
         viewport={{ once: true, margin: '-40px' }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        {/* Left Column: Get in Touch Channels */}
-        <div className={styles.leftCard}>
-          <h3 className={styles.cardTitle}>Get in Touch</h3>
-
+        {/* Left Column: Direct Contact & Profiles */}
+        <div className={styles.leftColumn}>
           <div className={styles.channelsList}>
             {contactChannels.map((ch) => (
               <a
@@ -151,23 +151,11 @@ export default function Contact() {
               </a>
             ))}
           </div>
-
-          <div className={styles.socialQuickIcons}>
-            <a href="https://www.linkedin.com/in/manish-kumar-37349633a/" target="_blank" rel="noopener noreferrer" className={styles.quickCircle} aria-label="LinkedIn">
-              <LinkedinIcon size={16} />
-            </a>
-            <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.quickCircle} aria-label="GitHub">
-              <GithubIcon size={16} />
-            </a>
-            <a href="https://leetcode.com/u/Manishkr92/" target="_blank" rel="noopener noreferrer" className={styles.quickCircle} aria-label="LeetCode">
-              <CodeIcon size={16} />
-            </a>
-          </div>
         </div>
 
         {/* Right Column: Send a Message Form */}
         <div className={styles.rightCard}>
-          <h3 className={styles.cardTitle}>Send a Message</h3>
+          <h3 className={styles.cardTitle}>SEND A MESSAGE</h3>
 
           <form onSubmit={handleSubmit} className={styles.contactForm}>
             <div className={styles.formGroup}>
@@ -221,7 +209,7 @@ export default function Contact() {
             </div>
 
             <button type="submit" className={styles.submitBtn}>
-              {submitted ? '✓ Message Sent!' : '+ Send Message'}
+              {submitted ? '✓ Message Sent Successfully!' : '+ Send Message'}
             </button>
           </form>
         </div>
