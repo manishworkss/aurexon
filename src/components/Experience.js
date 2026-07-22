@@ -48,18 +48,7 @@ const experiences = [
       'Engineered custom dark-theme glassmorphic cards and interactive project galleries tailored to visual storytelling.',
     ],
   },
-  {
-    company: 'Rudra Gupta AI/ML Portfolio',
-    role: 'Freelance Web Developer',
-    period: 'Feb 2026 – Present',
-    live: 'https://rudra-gupta.vercel.app/',
-    image: '/experience/rudra.png',
-    points: [
-      'Engineered an interactive 3D particle sphere hero and modern portfolio platform for an AI/ML developer, featuring dark futuristic styling and responsive project showcases.',
-      'Integrated smooth scroll navigation, interactive project filter tabs, and real-time contact form backend endpoints.',
-      'Optimized WebGL/3D canvas rendering for mobile and desktop screens to ensure smooth 60 FPS animation performance.',
-    ],
-  },
+
   {
     company: 'CodeAlpha',
     role: 'Java Development Intern',
