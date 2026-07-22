@@ -39,7 +39,8 @@ const experiences = [
     role: 'Freelance Web Developer',
     period: 'Jan 2026 – Present',
     live: 'https://mkrcollege.com',
-    image: '/experience/mkrcollege_clean.png',
+    image: '/experience/mkrcollege_full.png',
+    aspect: '1024 / 552',
     points: [
       'Architected and deployed a 12-page production college website (mkrcollege.com) using React.js, Node.js, Express.js, MongoDB, and Tailwind CSS — serving 300+ monthly visitors.',
       'Built admin-managed notice board, faculty directory, admit-card downloads, gallery, and event modules with 15+ RESTful API endpoints backed by indexed MongoDB collections.',
@@ -52,6 +53,7 @@ const experiences = [
     period: 'Mar 2026 – Present',
     live: 'https://sukuae.in',
     image: '/experience/sukuae_clean.png',
+    aspect: '1024 / 547',
     points: [
       'Designed and developed a custom high-performance creative portfolio (sukuae.in) for a VFX & Animation artist, increasing monthly site visitors from 0 to 150+ within 30 days.',
       'Optimized 200+ media assets, video montages, and image galleries with lazy loading and WebP formats, accelerating initial page render to under 1.8s.',
@@ -64,6 +66,7 @@ const experiences = [
     period: 'Oct 2025 – Nov 2025',
     live: null,
     image: null,
+    aspect: null,
     points: [
       'Built a Hotel Reservation System in Java with Swing GUI — implemented 5 room categories, real-time search across 50+ rooms, booking confirmation flow, payment simulation, and File I/O persistence.',
       'Developed a Stock Trading Platform supporting simulated buy/sell of 20+ stocks with portfolio tracking, transaction history logging, and real-time profit/loss calculation.',
@@ -123,13 +126,14 @@ export default function Experience() {
             >
               <AnimatePresence mode="wait">
                 {exp.image && activeHoverIndex === index ? (
-                  /* Hover State: Full Website Picture ONLY (No Text Explanation) */
+                  /* Hover State: Complete Full Image ONLY (Zero Cutting) */
                   <motion.a
                     key="image-only"
                     href={exp.live || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.fullImageCard}
+                    style={{ aspectRatio: exp.aspect || '16 / 9' }}
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.98 }}
