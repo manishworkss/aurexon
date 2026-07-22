@@ -5,17 +5,12 @@
   background-color: var(--cream-card);
   border: 1px solid var(--cream-border);
   border-radius: var(--radius-hero-card);
-  padding: 4rem 3rem;
+  padding: 3.5rem 3rem;
   box-shadow: 0 12px 36px rgba(35, 45, 32, 0.06);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
-.wrapper {
-  max-width: 720px;
-  width: 100%;
+.headerBox {
+  margin-bottom: 2.5rem;
 }
 
 .heading {
@@ -23,88 +18,230 @@
   font-weight: 900;
   color: var(--forest-dark);
   letter-spacing: -0.02em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
-.description {
-  font-size: 1.08rem;
-  color: var(--text-dark);
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-}
-
-.socialGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
-}
-
-.socialCard {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  background-color: var(--cream-light);
-  border: 1.5px solid var(--cream-border);
-  border-radius: var(--radius-card);
-  text-align: left;
-  transition: all 0.25s ease;
-  text-decoration: none;
-  color: var(--text-dark);
-}
-
-.socialCard:hover {
-  border-color: var(--forest-dark);
-  background-color: var(--forest-dark);
-  color: var(--cream-light);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(35, 45, 32, 0.1);
-}
-
-.socialCard:hover .socialLabel {
-  color: var(--text-light-muted);
-}
-
-.socialName {
-  font-size: 0.95rem;
-  font-weight: 800;
-  margin-bottom: 0.15rem;
-  text-transform: uppercase;
-}
-
-.socialLabel {
-  font-size: 0.85rem;
+.subtitle {
+  font-size: 1.05rem;
   color: var(--text-muted);
   font-weight: 500;
 }
 
-.ctaBtn {
-  display: inline-flex;
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Left & Right Glassmorphic Cards */
+.leftCard,
+.rightCard {
+  background-color: var(--cream-light);
+  border: 1.5px solid var(--cream-border);
+  border-radius: 24px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(35, 45, 32, 0.04);
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--forest-dark);
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+/* Left Channels List */
+.channelsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.channelItem {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.95rem 2.75rem;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--cream-card);
+  border: 1.5px solid var(--cream-border);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.channelItem:hover {
+  transform: translateY(-2px);
+  border-color: var(--forest-dark);
+  box-shadow: 0 6px 16px rgba(35, 45, 32, 0.08);
+}
+
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background-color: var(--forest-dark);
   color: var(--cream-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channelInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+
+  /* Constrain horizontal size so text overflow truncates cleanly */
+  min-width: 0;
+}
+
+.channelTitle {
+  font-size: 0.75rem;
   font-weight: 800;
-  font-size: 1rem;
-  border-radius: var(--radius-pill);
-  transition: all 0.25s ease;
-  box-shadow: 0 6px 20px rgba(35, 45, 32, 0.15);
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.ctaBtn:hover {
-  background-color: var(--forest-medium);
+.channelValue {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.externalArrow {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.channelItem:hover .externalArrow {
+  color: var(--forest-dark);
+}
+
+.socialQuickIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.quickCircle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--forest-dark);
+  color: var(--cream-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.quickCircle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(35, 45, 32, 0.2);
+  background-color: var(--forest-medium);
 }
 
-@media (max-width: 768px) {
-  .contactSection {
-    padding: 2.5rem 1.5rem;
+/* Right Form Inputs */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.formLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background-color: var(--cream-card);
+  border: 1.5px solid var(--cream-border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
+  border-color: var(--forest-dark);
+  box-shadow: 0 0 0 3px rgba(35, 45, 32, 0.1);
+}
+
+.formSelect {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23232D20' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--forest-dark);
+  color: var(--cream-light);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+
+  box-shadow: 0 6px 18px rgba(35, 45, 32, 0.15);
+}
+
+.submitBtn:hover {
+  background-color: #161B14;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(35, 45, 32, 0.25);
+}
+
+@media (max-width: 900px) {
+  .sectionContainer {
+    padding: 2rem 1.5rem;
     border-radius: 28px;
   }
-  .socialGrid {
+  .gridContainer {
     grid-template-columns: 1fr;
   }
 }
