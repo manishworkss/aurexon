@@ -4,13 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from './Hero.module.css';
 
-function SparklesIcon({ size = 14 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-    </svg>
-  );
-}
+
 
 const leftSkills = ['Java 21', 'Spring Boot', 'Python', 'AI Agents', 'Groq Llama-3.3', 'React.js', 'REST APIs', 'Node.js', 'MongoDB', 'MySQL'];
 const rightSkills = ['RAG & Embeddings', 'NLP Assistant', 'FastAPI', 'Git & GitHub', 'Postman', 'Firebase', 'LeetCode 200+'];
@@ -28,18 +22,6 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className={styles.bioContent}>
-            {/* AI Status Badge */}
-            <motion.div
-              className={styles.aiStatusBadge}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <span className={styles.aiDot}></span>
-              <SparklesIcon size={13} />
-              <span>AI Systems & LLM Integrations Active</span>
-            </motion.div>
-
             <motion.h1 
               className={styles.heading}
               initial={{ opacity: 0, y: 20 }}
