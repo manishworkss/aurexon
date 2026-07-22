@@ -72,6 +72,17 @@ const openSourceContributions = [
     live: 'https://gssoc.girlscript.org/profile/6e801805-7cc0-46e4-b5f2-ed465c4eb7c8',
     image: '/projects/gssoc_banner.png',
   },
+  {
+    title: 'PU Code Hackathon 3.0',
+    subtitle: 'Active Participant & Developer',
+    category: 'HACKATHON',
+    description:
+      'Participated in the PU Code Hackathon 3.0 organized by Parul University in collaboration with Vadodara Municipal Corporation. Fostered innovation and developed solutions under strict time constraints.',
+    stack: ['Hackathon', 'Problem Solving', 'Innovation', 'Team Collaboration'],
+    github: null,
+    live: null,
+    image: '/projects/pu_hackathon.png',
+  },
 ];
 
 const containerVariants = {
@@ -176,8 +187,8 @@ export default function Projects() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className={styles.heading}>OPEN SOURCE CONTRIBUTIONS</h2>
-          <p className={styles.subtitle}>Community programs & open-source software contributions</p>
+          <h2 className={styles.heading}>OPEN SOURCE & HACKATHONS</h2>
+          <p className={styles.subtitle}>Community programs, open-source contributions & hackathons</p>
         </motion.div>
 
         <motion.div
