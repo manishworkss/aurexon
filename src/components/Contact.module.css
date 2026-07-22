@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  padding: 1.1rem 1.35rem;
+  padding: 1rem 1.35rem;
   background-color: var(--cream-light);
   border: 1.5px solid var(--cream-border);
   border-radius: 20px;
@@ -69,13 +69,37 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: var(--forest-dark);
-  color: var(--cream-light);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(35, 45, 32, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Authentic Brand Color Badges */
+.gmailBg {
+  background-color: #EA4335 !important;
+  color: #FFFFFF !important;
+}
+
+.mobileBg {
+  background-color: #10B981 !important;
+  color: #FFFFFF !important;
+}
+
+.linkedinBg {
+  background-color: #0A66C2 !important;
+  color: #FFFFFF !important;
+}
+
+.githubBg {
+  background-color: #181717 !important;
+  color: #FFFFFF !important;
+}
+
+.leetcodeBg {
+  background-color: #FFA116 !important;
+  color: #FFFFFF !important;
 }
 
 .channelInfo {
@@ -87,17 +111,16 @@
 }
 
 .channelTitle {
-  font-size: 0.75rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  color: var(--forest-dark);
+  letter-spacing: -0.01em;
 }
 
-.channelValue {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--forest-dark);
+.channelSubtext {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -108,11 +131,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .channelItem:hover .externalArrow {
   color: var(--forest-dark);
+  transform: translate(2px, -2px);
 }
 
 /* Right Column: Send a Message Form Card */
