@@ -60,6 +60,20 @@ const projects = [
   },
 ];
 
+const openSourceContributions = [
+  {
+    title: 'GirlScript Summer of Code (GSSoC)',
+    subtitle: 'Open Source Contributor',
+    category: 'OPEN SOURCE',
+    description:
+      'Actively contributed to open-source repositories during GSSoC. Authored merged pull requests resolving critical backend bugs, optimizing REST APIs, and improving developer documentation.',
+    stack: ['Open Source', 'GSSoC Contributor', 'Git & GitHub', 'Java', 'React'],
+    github: 'https://github.com/manishworkss',
+    live: 'https://gssoc.girlscript.org/profile/6e801805-7cc0-46e4-b5f2-ed465c4eb7c8',
+    image: '/projects/gssoc_banner.png',
+  },
+];
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -76,6 +90,7 @@ const cardVariants = {
 export default function Projects() {
   return (
     <section className={styles.sectionContainer} id="projects">
+      {/* Featured Projects */}
       <motion.div
         className={styles.headerBox}
         initial={{ opacity: 0, y: 20 }}
@@ -97,7 +112,6 @@ export default function Projects() {
         {projects.map((project) => (
           <motion.div key={project.title} variants={cardVariants}>
             <Card className={styles.projectCard}>
-              {/* Full Width Image Container */}
               <div className={styles.imageContainer}>
                 <Image
                   src={project.image}
@@ -152,6 +166,85 @@ export default function Projects() {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Open Source Section */}
+      <div id="opensource" style={{ paddingTop: '3rem' }}>
+        <motion.div
+          className={styles.headerBox}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className={styles.heading}>OPEN SOURCE CONTRIBUTIONS</h2>
+          <p className={styles.subtitle}>Community programs & open-source software contributions</p>
+        </motion.div>
+
+        <motion.div
+          className={styles.grid}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+        >
+          {openSourceContributions.map((item) => (
+            <motion.div key={item.title} variants={cardVariants}>
+              <Card className={styles.projectCard}>
+                <div className={styles.imageContainer}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    priority
+                    className={styles.projectCoverImage}
+                  />
+                </div>
+
+                <div className={styles.cardContent}>
+                  <div className={styles.cardHeader}>
+                    <h3 className={styles.projectTitle}>{item.title}</h3>
+                    <div className={styles.links}>
+                      {item.github && (
+                        <a
+                          href={item.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.iconBtn}
+                          aria-label="GitHub Profile"
+                        >
+                          <GithubIcon size={18} />
+                        </a>
+                      )}
+                      {item.live && (
+                        <a
+                          href={item.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.iconBtn}
+                          aria-label="GSSoC Contributor Profile"
+                        >
+                          <ExternalLinkIcon size={18} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  <p className={styles.projectSubtitle}>{item.subtitle}</p>
+                  <p className={styles.projectDescription}>{item.description}</p>
+                  
+                  <div className={styles.stackList}>
+                    {item.stack.map((tech) => (
+                      <span key={tech} className={styles.stackPill}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }

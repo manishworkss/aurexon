@@ -34,7 +34,7 @@ const navItems = [
   { label: 'Education', href: '#education' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Open Source', href: '#projects' },
+  { label: 'Open Source', href: '#opensource' },
   { label: 'Contact Me', href: '#contact' },
 ];
 
