@@ -64,7 +64,7 @@ export default function Navbar() {
             <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
               <GithubIcon size={16} />
             </a>
-            <a href="https://linkedin.com/in/manish-kumar" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/manish-kumar-37349633a/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
               <LinkedinIcon size={16} />
             </a>
             <a href="https://leetcode.com/u/Manishkr92/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LeetCode">

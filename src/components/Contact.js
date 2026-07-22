@@ -73,8 +73,8 @@ const contactChannels = [
   },
   {
     title: 'LINKEDIN',
-    value: 'manish-kumar',
-    href: 'https://linkedin.com/in/manish-kumar',
+    value: 'manish-kumar-37349633a',
+    href: 'https://www.linkedin.com/in/manish-kumar-37349633a/',
     Icon: LinkedinIcon,
     external: true,
   },
@@ -153,7 +153,7 @@ export default function Contact() {
           </div>
 
           <div className={styles.socialQuickIcons}>
-            <a href="https://linkedin.com/in/manish-kumar" target="_blank" rel="noopener noreferrer" className={styles.quickCircle} aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/manish-kumar-37349633a/" target="_blank" rel="noopener noreferrer" className={styles.quickCircle} aria-label="LinkedIn">
               <LinkedinIcon size={16} />
             </a>
             <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.quickCircle} aria-label="GitHub">
