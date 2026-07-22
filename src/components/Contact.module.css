@@ -215,6 +215,16 @@
   min-height: 110px;
 }
 
+.errorMessage {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #DC2626;
+  background-color: #FEE2E2;
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #FCA5A5;
+}
+
 .submitBtn {
   width: 100%;
   padding: 1rem;
@@ -235,6 +245,12 @@
   background-color: #161B14;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(35, 45, 32, 0.25);
+}
+
+.submitBtn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none;
 }
 
 @media (max-width: 900px) {

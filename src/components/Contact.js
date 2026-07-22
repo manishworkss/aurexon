@@ -54,12 +54,56 @@ function ArrowUpRight({ size = 16 }) {
 }
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    contact: '',
+    subject: '',
+    category: 'To Hire',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setLoading(true);
+    setErrorMsg('');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/bcawithmanish0008@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          Name: formData.name,
+          Contact: formData.contact,
+          Subject: formData.subject,
+          Related_To: formData.category,
+          Message: formData.message,
+          _subject: `Portfolio Inquiry from ${formData.name}: ${formData.subject}`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', contact: '', subject: '', category: 'To Hire', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        throw new Error('Form submission failed.');
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMsg('Failed to send. Please click Gmail on the left to send directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -189,7 +233,10 @@ export default function Contact() {
               <label className={styles.formLabel}>From (Name)</label>
               <input
                 type="text"
+                name="name"
                 required
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your name"
                 className={styles.formInput}
               />
@@ -199,7 +246,10 @@ export default function Contact() {
               <label className={styles.formLabel}>Mail / Contact No.</label>
               <input
                 type="text"
+                name="contact"
                 required
+                value={formData.contact}
+                onChange={handleChange}
                 placeholder="Email or Phone Number"
                 className={styles.formInput}
               />
@@ -209,7 +259,10 @@ export default function Contact() {
               <label className={styles.formLabel}>Subject</label>
               <input
                 type="text"
+                name="subject"
                 required
+                value={formData.subject}
+                onChange={handleChange}
                 placeholder="What is this regarding?"
                 className={styles.formInput}
               />
@@ -217,7 +270,12 @@ export default function Contact() {
 
             <div className={styles.formGroup}>
               <label className={styles.formLabel}>Related To</label>
-              <select className={styles.formSelect} defaultValue="To Hire">
+              <select
+                name="category"
+                value={formData.category}
+                onChange={handleChange}
+                className={styles.formSelect}
+              >
                 <option value="To Hire">To Hire</option>
                 <option value="Freelance Project">Freelance Project</option>
                 <option value="Collaboration">Collaboration</option>
@@ -228,15 +286,24 @@ export default function Contact() {
             <div className={styles.formGroup}>
               <label className={styles.formLabel}>Message</label>
               <textarea
+                name="message"
                 required
                 rows={4}
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your message..."
                 className={styles.formTextarea}
               ></textarea>
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              {submitted ? '✓ Message Sent Successfully!' : '+ Send Message'}
+            {errorMsg && <p className={styles.errorMessage}>{errorMsg}</p>}
+
+            <button type="submit" disabled={loading} className={styles.submitBtn}>
+              {loading
+                ? 'Sending Message...'
+                : submitted
+                ? '✓ Delivered to bcawithmanish0008@gmail.com!'
+                : '+ Send Message'}
             </button>
           </form>
         </div>
