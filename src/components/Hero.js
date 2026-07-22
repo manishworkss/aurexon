@@ -93,6 +93,29 @@ export default function Hero() {
             animate={{ y: [0, -8, 0], rotate: [0, 4, 0] }}
             transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut', delay: 1 }}
           />
+
+          {/* Decorative Floating Tech Symbols */}
+          <motion.div 
+            className={`${styles.techSymbol} ${styles.sym1}`}
+            animate={{ y: [0, -15, 0], rotate: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
+          >
+            &lt;/&gt;
+          </motion.div>
+          <motion.div 
+            className={`${styles.techSymbol} ${styles.sym2}`}
+            animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut', delay: 0.5 }}
+          >
+            {`{ }`}
+          </motion.div>
+          <motion.div 
+            className={`${styles.techSymbol} ${styles.sym3}`}
+            animate={{ y: [0, -12, 0], rotate: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut', delay: 1 }}
+          >
+            ⌘
+          </motion.div>
         </motion.div>
 
         {/* Center Portrait Card Container */}
