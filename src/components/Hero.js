@@ -1,211 +1,156 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import Button from './Button';
 import styles from './Hero.module.css';
 
-const roles = [
-  'Java Backend Developer',
-  'AI Enthusiast',
-  'Spring Boot Architect',
-  'Problem Solver',
-];
-
-function TypeWriter() {
-  const [currentRole, setCurrentRole] = useState(0);
-  const [text, setText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const fullText = roles[currentRole];
-    const speed = isDeleting ? 40 : 80;
-
-    const timer = setTimeout(() => {
-      if (!isDeleting && text === fullText) {
-        setTimeout(() => setIsDeleting(true), 2000);
-        return;
-      }
-      if (isDeleting && text === '') {
-        setIsDeleting(false);
-        setCurrentRole((prev) => (prev + 1) % roles.length);
-        return;
-      }
-      setText(
-        isDeleting
-          ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
-      );
-    }, speed);
-
-    return () => clearTimeout(timer);
-  }, [text, isDeleting, currentRole]);
-
-  return (
-    <span className={styles.typedText}>
-      {text}
-      <span className={styles.cursor}>|</span>
-    </span>
-  );
-}
-
-/* Wireframe Grid Graphic */
-function WireframeGraphic() {
-  return (
-    <div className={styles.wireframeWrapper}>
-      <div className={styles.gridBackground}></div>
-      
-      {/* Code Block (Top Left) */}
-      <motion.div 
-        className={`${styles.wireItem} ${styles.wireCode}`}
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        whileHover={{ scale: 1.05 }}
-      >
-        <div className={styles.codeTag}>&lt;/&gt;</div>
-        <div className={styles.codeLines}>
-          <div className={styles.line} style={{ width: '40%' }}></div>
-          <div className={styles.line} style={{ width: '80%' }}></div>
-          <div className={styles.line} style={{ width: '60%' }}></div>
-          <div className={styles.line} style={{ width: '50%' }}></div>
-        </div>
-        <div className={styles.codeTag}>/&gt;</div>
-        <div className={styles.codeLines} style={{ marginTop: '0.5rem' }}>
-          <div className={styles.line} style={{ width: '70%' }}></div>
-          <div className={styles.line} style={{ width: '50%' }}></div>
-        </div>
-        <div className={styles.codeTag}>&lt;/&gt;</div>
-      </motion.div>
-
-      {/* UI Elements (Top Right) */}
-      <motion.div 
-        className={`${styles.wireItem} ${styles.wireUI}`}
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        whileHover={{ y: -5 }}
-      >
-        <div className={styles.wireButton}>button</div>
-        <div className={styles.wireInput}>input</div>
-      </motion.div>
-
-      {/* Isometric Cube (Center) */}
-      <motion.div 
-        className={`${styles.wireItem} ${styles.wireCube}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        animate={{ y: [0, -10, 0] }}
-        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-      >
-        <svg width="64" height="74" viewBox="0 0 64 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M32 0L64 18.5V55.5L32 74L0 55.5V18.5L32 0Z" fill="#F0F0F0" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M32 37L64 18.5M32 37L0 18.5M32 37V74" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M32 0L0 18.5L32 37L64 18.5L32 0Z" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M0 18.5V55.5L32 74V37L0 18.5Z" fill="#FAFAFA" stroke="#D0D0D0" strokeWidth="2" strokeLinejoin="round"/>
-        </svg>
-      </motion.div>
-
-      {/* Card (Bottom Left) */}
-      <motion.div 
-        className={`${styles.wireItem} ${styles.wireCard}`}
-        initial={{ opacity: 0, y: 20, rotate: -5 }}
-        animate={{ opacity: 1, y: 0, rotate: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        whileHover={{ scale: 1.05 }}
-      >
-        <div className={styles.cardImg}></div>
-        <div className={styles.line} style={{ width: '90%', marginBottom: '8px' }}></div>
-        <div className={styles.line} style={{ width: '60%', marginBottom: '16px' }}></div>
-        <div className={styles.cardBtn}></div>
-      </motion.div>
-
-      {/* Tree Diagram (Bottom Right) */}
-      <motion.div 
-        className={`${styles.wireItem} ${styles.wireTree}`}
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1.0 }}
-        whileHover={{ y: -5 }}
-      >
-        <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Connecting Lines */}
-          <path d="M50 20V40 M50 40H20 V50 M50 40H80 V50 M50 40V50" stroke="#D0D0D0" strokeWidth="2"/>
-          {/* Nodes */}
-          <rect x="38" y="0" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
-          <rect x="8" y="50" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
-          <rect x="38" y="50" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
-          <rect x="68" y="50" width="24" height="20" fill="#E5E5E5" stroke="#D0D0D0" strokeWidth="2"/>
-        </svg>
-      </motion.div>
-    </div>
-  );
-}
+const leftSkills = ['Java', 'Spring Boot', 'Python', 'React.js', 'REST APIs', 'Node.js', 'MongoDB', 'MySQL'];
+const rightSkills = ['FastAPI', 'Git & GitHub', 'Postman', 'Firebase', 'Supabase', 'LeetCode 200+'];
 
 export default function Hero() {
   return (
-    <section className={styles.hero} id="hero">
-      <div className={styles.content}>
-        <motion.div
-          className={styles.badge}
-          initial={{ opacity: 0, scale: 0.8 }}
+    <section className={styles.heroSection} id="hero">
+      <div className={styles.heroGrid}>
+        
+        {/* Top Left Quadrant - Dark Forest Green Bio */}
+        <motion.div 
+          className={styles.topLeftBlock}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className={styles.bioContent}>
+            <motion.h1 
+              className={styles.heading}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              HEY, I&apos;M MANISH
+            </motion.h1>
+
+            <motion.p 
+              className={styles.subtext}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Backend Developer & AI Enthusiast specializing in Java, Spring Boot, REST APIs, and LLM integrations. Building production-ready applications, scalable architectures, and clean maintainable code.
+            </motion.p>
+
+            <motion.div 
+              className={styles.resumeNoteBox}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+            >
+              <span>📄 Want the full story? </span>
+              <a 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={styles.resumeLink}
+              >
+                Just visit my resume to check →
+              </a>
+            </motion.div>
+
+            <motion.div 
+              className={styles.actionWrapper}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+            >
+              <a href="#contact" className={styles.contactBtn}>
+                Contact Me
+              </a>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Top Right Quadrant - Warm Sand with Floating Triangles */}
+        <motion.div 
+          className={styles.topRightBlock}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Decorative Floating Triangles */}
+          <motion.div 
+            className={`${styles.triangle} ${styles.tri1}`}
+            animate={{ y: [0, -12, 0], rotate: [0, 5, 0] }}
+            transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
+          />
+          <motion.div 
+            className={`${styles.triangle} ${styles.tri2}`}
+            animate={{ y: [0, 10, 0], rotate: [0, -8, 0] }}
+            transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut', delay: 0.5 }}
+          />
+          <motion.div 
+            className={`${styles.triangle} ${styles.tri3}`}
+            animate={{ y: [0, -8, 0], rotate: [0, 4, 0] }}
+            transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut', delay: 1 }}
+          />
+        </motion.div>
+
+        {/* Center Portrait Card Container */}
+        <motion.div 
+          className={styles.centerPortraitCard}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className={styles.badgeDot}></span>
-          Available for opportunities
+          <div className={styles.portraitWrapper}>
+            <Image
+              src="/profile-natural.png"
+              alt="Manish Kumar"
+              width={480}
+              height={560}
+              priority
+              className={styles.portraitImage}
+            />
+          </div>
         </motion.div>
 
-        <motion.h1
-          className={styles.name}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Manish Kumar
-        </motion.h1>
-
-        <motion.div
-          className={styles.roleWrapper}
+        {/* Bottom Left Quadrant - Dark Olive Green Skills */}
+        <motion.div 
+          className={styles.bottomLeftBlock}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <TypeWriter />
+          <div className={styles.skillsSectionLeft}>
+            <h3 className={styles.skillsHeading}>SKILLS & TECHNOLOGIES</h3>
+            <div className={styles.skillsGrid}>
+              {leftSkills.map((skill) => (
+                <span key={skill} className={styles.heroSkillPillLeft}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
-        <motion.p
-          className={styles.description}
+        {/* Bottom Right Quadrant - Sage Green Skills with Accent */}
+        <motion.div 
+          className={styles.bottomRightBlock}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Building robust, scalable backend systems and intelligent AI
-          solutions. Passionate about clean architecture, performance
-          optimization, and shipping production-ready code.
-        </motion.p>
-
-        <motion.div
-          className={styles.actions}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-        >
-          <Button href="#projects" variant="primary">
-            Explore Projects
-          </Button>
-          <Button href="#contact" variant="outline">
-            Contact Me
-          </Button>
+          <div className={styles.skillsSectionRight}>
+            <div className={styles.skillsGrid}>
+              {rightSkills.map((skill) => (
+                <span key={skill} className={styles.heroSkillPillRight}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className={styles.largeTriangleAccent} />
         </motion.div>
+
       </div>
-
-      <WireframeGraphic />
-
-      {/* Background gradient blobs */}
-      <div className={styles.blob1}></div>
-      <div className={styles.blob2}></div>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 .main {
   min-height: 100vh;
-  padding: 0 3rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,16 +11,12 @@
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 8rem;
-  padding-bottom: 4rem;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
-  .main {
-    padding: 0 1.25rem;
-  }
-
   .container {
-    gap: 5rem;
+    gap: 1rem;
   }
 }

@@ -1,18 +1,29 @@
-.experience {
+.experienceSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  background-color: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: var(--radius-hero-card);
+  padding: 3.5rem 3rem;
+  box-shadow: 0 12px 36px rgba(35, 45, 32, 0.06);
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
 .heading {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 900;
+  color: var(--forest-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
 }
 
 .subtitle {
   font-size: 1.05rem;
-  color: var(--foreground-muted);
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 .timeline {
@@ -34,15 +45,14 @@
 }
 
 .iconCircle {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 2px solid var(--border-color);
+  background: var(--forest-dark);
+  color: var(--cream-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--foreground);
-  background: var(--background);
   flex-shrink: 0;
   z-index: 1;
 }
@@ -50,13 +60,17 @@
 .line {
   width: 2px;
   flex: 1;
-  background: var(--border-color);
+  background: var(--cream-border);
   margin-top: 4px;
 }
 
 .content {
-  padding-bottom: 2.5rem;
   flex: 1;
+  background-color: var(--cream-light);
+  border: 1.5px solid var(--cream-border);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .meta {
@@ -65,25 +79,86 @@
   align-items: baseline;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .role {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--forest-dark);
 }
 
 .period {
   font-size: 0.85rem;
-  color: var(--foreground-muted);
-  font-weight: 500;
+  font-weight: 700;
+  color: var(--forest-dark);
+  background-color: var(--cream-card);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--cream-border);
+}
+
+.companyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .company {
   font-size: 0.95rem;
-  color: var(--foreground-muted);
-  margin-bottom: 1rem;
-  font-weight: 500;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.liveBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--forest-dark);
+  color: var(--cream-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.liveBtn:hover {
+  background-color: #161B14;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(35, 45, 32, 0.2);
+}
+
+.previewContainer {
+  display: block;
+  width: 100%;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1.5px solid var(--cream-border);
+  margin-bottom: 1.25rem;
+  background-color: var(--forest-dark);
+  box-shadow: 0 6px 18px rgba(35, 45, 32, 0.08);
+}
+
+.previewImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.35s ease;
+}
+
+.previewContainer:hover .previewImage {
+  transform: scale(1.03);
 }
 
 .points {
@@ -95,23 +170,34 @@
 }
 
 .point {
-  font-size: 0.92rem;
-  color: var(--foreground-muted);
-  line-height: 1.7;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.65;
   padding-left: 1.25rem;
   position: relative;
 }
 
 .point::before {
-  content: '—';
+  content: '▸';
   position: absolute;
   left: 0;
-  color: var(--border-color-hover);
+  color: var(--forest-dark);
 }
 
 @media (max-width: 768px) {
+  .experienceSection {
+    padding: 2rem 1.5rem;
+    border-radius: 28px;
+  }
   .meta {
     flex-direction: column;
-    gap: 0.2rem;
+    align-items: flex-start;
+  }
+  .companyRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .previewContainer {
+    height: 150px;
   }
 }

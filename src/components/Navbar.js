@@ -1,78 +1,86 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Navbar.module.css';
 
-function GithubIcon({ size = 20 }) {
+function GithubIcon({ size = 16 }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-      <path d="M9 18c-4.51 2-5-2-7-2" />
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
     </svg>
   );
 }
 
-function LinkedinIcon({ size = 20 }) {
+function LinkedinIcon({ size = 16 }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    </svg>
+  );
+}
+
+function LeetcodeIcon({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.17 6.2a1.374 1.374 0 0 0-.416.973v1.545c0 .365.145.714.405.973l.01.01a1.374 1.374 0 0 0 1.944 0l5.35-5.326a1.374 1.374 0 0 0 0-1.944L13.483 0zM5.38 8.136a1.374 1.374 0 0 0-.973.405L.405 12.543a1.374 1.374 0 0 0 0 1.944l4.002 4.002a1.374 1.374 0 0 0 1.944 0l3.992-3.992a1.374 1.374 0 0 0 0-1.944l-4.002-4.002a1.374 1.374 0 0 0-.961-.415zm13.24 0a1.374 1.374 0 0 0-.973.405l-4.002 4.002a1.374 1.374 0 0 0 0 1.944l3.992 3.992a1.374 1.374 0 0 0 1.944 0l4.002-4.002a1.374 1.374 0 0 0 0-1.944l-4.002-4.002a1.374 1.374 0 0 0-.961-.415z"/>
     </svg>
   );
 }
 
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Home', href: '#hero' },
+  { label: 'Education', href: '#education' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Open Source', href: '#projects' },
+  { label: 'Contact Me', href: '#contact' },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <motion.header
-      className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-    >
-      <div className={styles.navContainer}>
-        <Link href="/" className={styles.logo}>
-          M.K.
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className={styles.navLinks}>
+    <header className={styles.headerWrapper}>
+      <motion.div
+        className={styles.pillNavbar}
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {/* Left/Center: Nav links */}
+        <nav className={styles.desktopNav}>
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className={styles.link}>
+            <Link key={item.label} href={item.href} className={styles.navLink}>
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className={styles.right}>
+        {/* Right: Social Icons placed just before Resume Pill Button & Mobile Toggle */}
+        <div className={styles.rightActions}>
           <div className={styles.socials}>
-            <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
-              <GithubIcon size={20} />
+            <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
+              <GithubIcon size={16} />
             </a>
-            <a href="https://linkedin.com/in/manish-kumar" target="_blank" rel="noopener noreferrer" className={styles.iconLink}>
-              <LinkedinIcon size={20} />
+            <a href="https://linkedin.com/in/manish-kumar" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+              <LinkedinIcon size={16} />
+            </a>
+            <a href="https://leetcode.com/u/Manishkr92/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LeetCode">
+              <LeetcodeIcon size={16} />
             </a>
           </div>
 
-          {/* Mobile hamburger */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.resumeBtn}
+          >
+            Resume
+          </a>
+
           <button
             className={`${styles.hamburger} ${mobileOpen ? styles.active : ''}`}
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -83,21 +91,21 @@ export default function Navbar() {
             <span></span>
           </button>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Mobile menu */}
+      {/* Mobile Dropdown */}
       {mobileOpen && (
         <motion.nav
-          className={styles.mobileMenu}
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          transition={{ duration: 0.25 }}
+          className={styles.mobileDropdown}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
         >
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={styles.mobileLink}
+              className={styles.mobileNavLink}
               onClick={() => setMobileOpen(false)}
             >
               {item.label}
@@ -105,6 +113,6 @@ export default function Navbar() {
           ))}
         </motion.nav>
       )}
-    </motion.header>
+    </header>
   );
 }

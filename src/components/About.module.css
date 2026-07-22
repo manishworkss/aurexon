@@ -1,26 +1,93 @@
-.about {
+.aboutSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  background-color: var(--cream-card);
+  border: 1px solid var(--cream-border);
+  border-radius: var(--radius-hero-card);
+  padding: 3.5rem 3rem;
+  box-shadow: 0 12px 36px rgba(35, 45, 32, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .heading {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 900;
+  color: var(--forest-dark);
+  letter-spacing: -0.02em;
   margin-bottom: 1rem;
 }
 
 .description {
-  font-size: 1.05rem;
-  color: var(--foreground-muted);
-  line-height: 1.8;
-  max-width: 700px;
+  font-size: 1.08rem;
+  color: var(--text-dark);
+  line-height: 1.85;
+  max-width: 900px;
+  font-weight: 400;
 }
 
 .subheading {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--forest-dark);
   margin-bottom: 1.25rem;
+}
+
+.eduGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eduCard {
+  background-color: var(--cream-light);
+  border: 1.5px solid var(--cream-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.75rem;
+  transition: all 0.25s ease;
+}
+
+.eduCard:hover {
+  border-color: var(--forest-dark);
+  transform: translateY(-2px);
+}
+
+.eduHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.degree {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--forest-dark);
+}
+
+.period {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  background-color: var(--cream-card);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--cream-border);
+}
+
+.institution {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.location {
+  color: var(--text-dark);
+  font-weight: 500;
 }
 
 .skillsGrid {
@@ -29,19 +96,31 @@
   gap: 0.75rem;
 }
 
-.skill {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--foreground);
-  background-color: transparent;
-  transition: all 0.2s ease;
+.skillPill {
+  padding: 0.55rem 1.25rem;
+  border: 1.5px solid var(--cream-border);
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  background-color: var(--cream-light);
+  transition: all 0.25s ease;
 }
 
-.skill:hover {
-  background-color: var(--foreground);
-  color: var(--background);
-  border-color: var(--foreground);
+.skillPill:hover {
+  background-color: var(--forest-dark);
+  color: var(--cream-light);
+  border-color: var(--forest-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 2rem 1.5rem;
+    border-radius: 28px;
+  }
+  .eduHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

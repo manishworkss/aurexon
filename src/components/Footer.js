@@ -2,10 +2,10 @@ import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footerSection}>
       <div className={styles.container}>
         <div className={styles.top}>
-          <span className={styles.logo}>M.K.</span>
+          <span className={styles.logo}>MANISH KUMAR</span>
           <p className={styles.tagline}>Java Backend Developer & AI Enthusiast</p>
         </div>
         <div className={styles.divider}></div>

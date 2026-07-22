@@ -1,12 +1,25 @@
-import { Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, Outfit, Shantell_Sans } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import AuroraBackground from '@/components/AuroraBackground'
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-jakarta',
+})
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-outfit',
+})
+
+const shantell = Shantell_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-shantell',
 })
 
 export const metadata = {
@@ -21,11 +34,9 @@ export const metadata = {
   },
 }
 
-import AuroraBackground from '@/components/AuroraBackground'
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${jakarta.variable} ${outfit.variable} ${shantell.variable}`} suppressHydrationWarning>
       <body>
         <AuroraBackground />
         <Navbar />

@@ -1,13 +1,15 @@
-.footer {
-  border-top: 1px solid var(--border-color);
-  background-color: var(--background);
-  padding: 3rem 2rem;
-  margin-top: 6rem;
+.footerSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  background-color: var(--forest-dark);
+  color: var(--cream-light);
+  border-radius: var(--radius-hero-card);
+  padding: 3rem;
+  box-shadow: 0 12px 36px rgba(35, 45, 32, 0.1);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -20,20 +22,22 @@
 }
 
 .logo {
-  font-weight: 800;
-  font-size: 1.2rem;
-  letter-spacing: -0.03em;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: var(--text-light);
 }
 
 .tagline {
-  font-size: 0.88rem;
-  color: var(--foreground-muted);
+  font-size: 0.95rem;
+  color: var(--text-light-muted);
+  font-weight: 500;
 }
 
 .divider {
   width: 100%;
   height: 1px;
-  background: var(--border-color);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .bottom {
@@ -43,16 +47,21 @@
 }
 
 .text {
-  font-size: 0.85rem;
-  color: var(--foreground-muted);
+  font-size: 0.88rem;
+  color: var(--text-light-muted);
 }
 
 .subtext {
-  font-size: 0.8rem;
-  color: var(--border-color-hover);
+  font-size: 0.85rem;
+  color: var(--sage-light);
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
+  .footerSection {
+    padding: 2rem 1.5rem;
+    border-radius: 28px;
+  }
   .top,
   .bottom {
     flex-direction: column;

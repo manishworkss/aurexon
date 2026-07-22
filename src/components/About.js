@@ -3,49 +3,31 @@
 import { motion } from 'framer-motion';
 import styles from './About.module.css';
 
-const skills = [
-  { name: 'Java', category: 'lang' },
-  { name: 'Python', category: 'lang' },
-  { name: 'JavaScript', category: 'lang' },
-  { name: 'SQL', category: 'lang' },
-  { name: 'Spring Boot', category: 'framework' },
-  { name: 'Node.js', category: 'framework' },
-  { name: 'React.js', category: 'framework' },
-  { name: 'REST APIs', category: 'framework' },
-  { name: 'FastAPI', category: 'framework' },
-  { name: 'MongoDB', category: 'db' },
-  { name: 'MySQL', category: 'db' },
-  { name: 'Firebase', category: 'db' },
-  { name: 'Supabase', category: 'db' },
-  { name: 'Git & GitHub', category: 'tool' },
-  { name: 'Postman', category: 'tool' },
-  { name: 'Vercel', category: 'tool' },
-  { name: 'Java Swing', category: 'tool' },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.05 },
+const education = [
+  {
+    degree: 'Bachelor of Computer Applications (BCA)',
+    institution: 'Parul University',
+    location: 'Vadodara, Gujarat',
+    period: 'August 2024 – May 2027',
   },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
-};
+  {
+    degree: 'Intermediate (12th Science)',
+    institution: 'J.R.C. Inter College, Nayagaon, Vaishali',
+    location: 'Patna, Bihar',
+    period: 'March 2021',
+  },
+];
 
 export default function About() {
   return (
-    <section className={styles.about} id="about">
+    <section className={styles.aboutSection} id="about">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className={styles.heading}>About</h2>
+        <h2 className={styles.heading}>ABOUT ME</h2>
         <p className={styles.description}>
           I&apos;m a Java Backend Developer and AI Enthusiast based in Vadodara,
           Gujarat. I enjoy building things that actually work — from college
@@ -57,30 +39,28 @@ export default function About() {
         </p>
       </motion.div>
 
+      {/* Education Section */}
       <motion.div
+        id="education"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.5, delay: 0.15 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <h3 className={styles.subheading}>Skills & Technologies</h3>
-        <motion.div
-          className={styles.skillsGrid}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
-        >
-          {skills.map((skill) => (
-            <motion.span
-              key={skill.name}
-              className={styles.skill}
-              variants={itemVariants}
-            >
-              {skill.name}
-            </motion.span>
+        <h3 className={styles.subheading}>EDUCATION</h3>
+        <div className={styles.eduGrid}>
+          {education.map((edu) => (
+            <div key={edu.degree} className={styles.eduCard}>
+              <div className={styles.eduHeader}>
+                <h4 className={styles.degree}>{edu.degree}</h4>
+                <span className={styles.period}>{edu.period}</span>
+              </div>
+              <p className={styles.institution}>
+                {edu.institution} — <span className={styles.location}>{edu.location}</span>
+              </p>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
