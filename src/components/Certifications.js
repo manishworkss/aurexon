@@ -132,6 +132,7 @@ export default function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.5 }}
+            className={styles.certCardWrapper}
           >
             <Card className={styles.certCard}>
               {/* Proof Image Preview */}
