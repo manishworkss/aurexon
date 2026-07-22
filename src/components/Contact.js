@@ -61,8 +61,8 @@ function ArrowUpRight({ size = 16 }) {
 const contactChannels = [
   {
     title: 'MOBILE',
-    value: '+91 90755 69787',
-    href: 'tel:+919075569787',
+    value: '+91 8271735190',
+    href: 'tel:+918271735190',
     Icon: PhoneIcon,
   },
   {
