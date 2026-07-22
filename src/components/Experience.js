@@ -61,6 +61,19 @@ const experiences = [
     ],
   },
   {
+    company: 'Hospitality Tech AI Solutions',
+    role: 'Freelance Full Stack Developer',
+    period: 'Feb 2026 – Present',
+    live: 'https://manish-portfolio-eosin.vercel.app/',
+    image: '/experience/hospitality_portfolio_clean.png',
+    aspect: '2940 / 1674',
+    points: [
+      'Architected and launched an AI-driven digital platform (manish-portfolio-eosin.vercel.app) tailored for hospitality tech, helping hotels & restaurants increase direct booking conversions by up to 30%.',
+      'Engineered smart digital menus, real-time revenue analytics dashboards, and automated AI booking workflows using React.js, Tailwind CSS, and Node.js REST APIs.',
+      'Optimized core web performance and interactive booking funnels, accelerating guest checkout times by 40% while driving higher average order values.',
+    ],
+  },
+  {
     company: 'CodeAlpha',
     role: 'Java Development Intern',
     period: 'Oct 2025 – Nov 2025',
