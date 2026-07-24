@@ -351,8 +351,12 @@
   }
 
   .topRightBlock {
-    min-height: 200px;
+    min-height: 100px;
     border-radius: 0;
+  }
+
+  .triangle, .techSymbol {
+    display: none !important;
   }
 
   .centerPortraitCard {
