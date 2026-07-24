@@ -361,12 +361,13 @@
 
   .centerPortraitCard {
     position: relative;
-    top: -60px;
+    top: -50px;
     left: 50%;
     transform: translateX(-50%) !important;
-    margin-bottom: -40px;
-    width: 260px;
-    height: 320px;
+    margin-bottom: -30px;
+    width: 320px;
+    height: 400px;
+    max-width: 90vw;
   }
 
   .bottomLeftBlock {
