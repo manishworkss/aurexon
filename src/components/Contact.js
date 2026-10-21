@@ -60,6 +60,7 @@ export default function Contact() {
     subject: '',
     category: 'To Hire',
     message: '',
+    honeypot: '',
   });
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -73,6 +74,15 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setErrorMsg('');
+
+    // Honeypot check: if filled, quietly drop spam without alerting the bot
+    if (formData.honeypot) {
+      setSubmitted(true);
+      setFormData({ name: '', contact: '', subject: '', category: 'To Hire', message: '', honeypot: '' });
+      setLoading(false);
+      setTimeout(() => setSubmitted(false), 5000);
+      return;
+    }
 
     try {
       const response = await fetch('https://formsubmit.co/ajax/bcawithmanish0008@gmail.com', {
@@ -88,12 +98,14 @@ export default function Contact() {
           Related_To: formData.category,
           Message: formData.message,
           _subject: `Portfolio Inquiry from ${formData.name}: ${formData.subject}`,
+          _honey: formData.honeypot,
+          _template: 'table',
         }),
       });
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: '', contact: '', subject: '', category: 'To Hire', message: '' });
+        setFormData({ name: '', contact: '', subject: '', category: 'To Hire', message: '', honeypot: '' });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         throw new Error('Form submission failed.');
@@ -229,6 +241,20 @@ export default function Contact() {
           <h3 className={styles.cardTitle}>SEND A MESSAGE</h3>
 
           <form onSubmit={handleSubmit} className={styles.contactForm}>
+            {/* Honeypot anti-spam field (hidden from human visitors) */}
+            <div style={{ display: 'none', position: 'absolute', left: '-9999px' }} aria-hidden="true">
+              <label htmlFor="website_hp">Leave this field blank</label>
+              <input
+                id="website_hp"
+                type="text"
+                name="honeypot"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.honeypot}
+                onChange={handleChange}
+              />
+            </div>
+
             <div className={styles.formGroup}>
               <label className={styles.formLabel}>From (Name)</label>
               <input
