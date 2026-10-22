@@ -70,7 +70,6 @@ export default function Footer() {
 
           <nav className={styles.navLinks}>
             <Link href="#hero" className={styles.navLink}>Home</Link>
-            <Link href="#education" className={styles.navLink}>Education</Link>
             <Link href="#experience" className={styles.navLink}>Experience</Link>
             <Link href="#projects" className={styles.navLink}>Projects</Link>
             <Link href="#certifications" className={styles.navLink}>Certificates</Link>

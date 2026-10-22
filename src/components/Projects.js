@@ -42,7 +42,7 @@ const projects = [
     category: 'PROJECT',
     description:
       'An advanced Java AI Chatbot featuring a responsive desktop Swing GUI, linear algebra & calculus equation solver engine, and programming assistant.',
-    stack: ['Java 21', 'Swing GUI', 'NLP', 'OOP', 'Spring Boot'],
+    stack: ['Java', 'Swing GUI', 'NLP', 'OOP', 'Spring Boot'],
     github: 'https://github.com/manishworkss/CodeAlpha-Artificial-IntelligenceChatbot',
     live: 'https://intellibot-pro.vercel.app/',
     image: '/projects/intellibot.png',
@@ -53,7 +53,7 @@ const projects = [
     category: 'PROJECT',
     description:
       'A Java OOP desktop application featuring room categorization, real-time search & room booking, reservation management, and simulated payment confirmation.',
-    stack: ['Java 21', 'Swing GUI', 'OOP', 'SQL', 'Data Structures'],
+    stack: ['Java', 'Swing GUI', 'OOP', 'SQL', 'Data Structures'],
     github: 'https://github.com/manishworkss/CodeAlpha_Hotel-Reservation-System',
     live: 'https://github.com/manishworkss/CodeAlpha_Hotel-Reservation-System',
     image: '/projects/hotel_reservation.png',

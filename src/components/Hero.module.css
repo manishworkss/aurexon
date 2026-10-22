@@ -340,19 +340,26 @@
 }
 
 @media (max-width: 880px) {
+  .heroSection {
+    margin: 0 auto 2rem auto;
+  }
+
   .heroGrid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .topLeftBlock {
-    padding: 3rem 2rem;
-    border-radius: var(--radius-hero-card) var(--radius-hero-card) 0 0;
+    padding: 2.75rem 2rem 2rem 2rem;
+    border-radius: 28px 28px 0 0;
+    width: 100%;
   }
 
   .topRightBlock {
-    min-height: 100px;
-    border-radius: 0;
+    display: none !important;
   }
 
   .triangle, .techSymbol {
@@ -361,24 +368,75 @@
 
   .centerPortraitCard {
     position: relative;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%) !important;
-    margin-bottom: -30px;
-    width: 320px;
-    height: 400px;
-    max-width: 90vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 1.5rem auto;
+    transform: none !important;
+    width: min(310px, calc(100% - 2rem));
+    height: 390px;
+    max-width: calc(100% - 2rem);
+    border-radius: 28px;
   }
 
   .bottomLeftBlock {
-    padding: 2rem;
-    justify-content: center;
+    padding: 2rem 1.75rem;
+    justify-content: flex-start;
     border-radius: 0;
+    width: 100%;
   }
 
   .bottomRightBlock {
-    min-height: 140px;
-    padding: 1.5rem;
-    border-radius: 0 0 var(--radius-hero-card) var(--radius-hero-card);
+    min-height: auto;
+    padding: 1.75rem;
+    border-radius: 0 0 28px 28px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .heroGrid {
+    border-radius: 24px;
+  }
+
+  .topLeftBlock {
+    padding: 2rem 1.25rem 1.5rem 1.25rem;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .heading {
+    font-size: clamp(1.85rem, 8vw, 2.3rem);
+  }
+
+  .subtext {
+    font-size: 0.98rem;
+  }
+
+  .centerPortraitCard {
+    width: min(290px, calc(100% - 1.5rem));
+    height: 360px;
+    margin: 1.25rem auto;
+    border-radius: 24px;
+  }
+
+  .portraitWrapper {
+    border-radius: 20px;
+  }
+
+  .bottomLeftBlock {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .bottomRightBlock {
+    padding: 1.25rem;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .largeTriangleAccent {
+    display: none !important;
   }
 }

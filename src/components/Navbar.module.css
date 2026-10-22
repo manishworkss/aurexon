@@ -158,3 +158,42 @@
     display: flex;
   }
 }
+
+@media (max-width: 480px) {
+  .headerWrapper {
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0 0.25rem;
+  }
+
+  .pillNavbar {
+    width: 100%;
+    padding: 0.45rem 0.85rem;
+  }
+
+  .rightActions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .socials {
+    gap: 0.35rem;
+  }
+
+  .socialIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .resumeBtn {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .mobileDropdown {
+    left: 0.25rem;
+    right: 0.25rem;
+    padding: 0.85rem 1.25rem;
+  }
+}

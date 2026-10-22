@@ -59,99 +59,29 @@
   box-shadow: 0 6px 18px rgba(35, 45, 32, 0.12);
 }
 
-.subheading {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--forest-dark);
-  margin-bottom: 1.25rem;
-}
-
-.eduGrid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.eduCard {
-  background-color: var(--cream-light);
-  border: 1.5px solid var(--cream-border);
-  border-radius: var(--radius-card);
-  padding: 1.5rem 1.75rem;
-  transition: all 0.25s ease;
-}
-
-.eduCard:hover {
-  border-color: var(--forest-dark);
-  transform: translateY(-2px);
-}
-
-.eduHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-}
-
-.degree {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--forest-dark);
-}
-
-.period {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--forest-dark);
-  background-color: var(--cream-card);
-  padding: 0.3rem 0.85rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--cream-border);
-}
-
-.institution {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.location {
-  color: var(--text-dark);
-  font-weight: 500;
-}
-
-.skillsGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.skillPill {
-  padding: 0.55rem 1.25rem;
-  border: 1.5px solid var(--cream-border);
-  border-radius: var(--radius-pill);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--forest-dark);
-  background-color: var(--cream-light);
-  transition: all 0.25s ease;
-}
-
-.skillPill:hover {
-  background-color: var(--forest-dark);
-  color: var(--cream-light);
-  border-color: var(--forest-dark);
-  transform: translateY(-2px);
-}
-
 @media (max-width: 768px) {
   .aboutSection {
     padding: 2rem 1.5rem;
     border-radius: 28px;
+    margin-bottom: 2rem;
   }
-  .eduHeader {
-    flex-direction: column;
-    align-items: flex-start;
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 1.5rem 1rem;
+    border-radius: 24px;
+    margin-bottom: 1.5rem;
+  }
+  .heading {
+    font-size: clamp(1.75rem, 7vw, 2.2rem);
+  }
+  .description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+  .certBadgePill {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.9rem;
   }
 }

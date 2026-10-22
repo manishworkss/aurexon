@@ -31,7 +31,6 @@ function LeetcodeIcon({ size = 16 }) {
 
 const navItems = [
   { label: 'Home', href: '#hero' },
-  { label: 'Education', href: '#education' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Certificates', href: '#certifications' },

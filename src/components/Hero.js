@@ -6,7 +6,7 @@ import styles from './Hero.module.css';
 
 
 
-const leftSkills = ['Java 21', 'Spring Boot', 'Python', 'AI Agents', 'Groq Llama-3.3', 'React.js', 'REST APIs', 'Node.js', 'MongoDB', 'MySQL'];
+const leftSkills = ['Java', 'Spring Boot', 'WordPress Developer', 'Python', 'AI Agents', 'React.js', 'REST APIs', 'Node.js', 'MySQL'];
 const rightSkills = ['RAG & Embeddings', 'NLP Assistant', 'FastAPI', 'Git & GitHub', 'Postman', 'Firebase', 'LeetCode 200+'];
 
 export default function Hero() {
