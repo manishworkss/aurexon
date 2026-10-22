@@ -48,15 +48,15 @@ const projects = [
     image: '/projects/intellibot.png',
   },
   {
-    title: 'Hotel Reservation System',
-    subtitle: 'Java & Swing Booking System',
+    title: 'SentixAI',
+    subtitle: 'AI-Powered Movie Sentiment Intelligence',
     category: 'PROJECT',
     description:
-      'A Java OOP desktop application featuring room categorization, real-time search & room booking, reservation management, and simulated payment confirmation.',
-    stack: ['Java', 'Swing GUI', 'OOP', 'SQL', 'Data Structures'],
-    github: 'https://github.com/manishworkss/CodeAlpha_Hotel-Reservation-System',
-    live: 'https://github.com/manishworkss/CodeAlpha_Hotel-Reservation-System',
-    image: '/projects/hotel_reservation.png',
+      'An enterprise-grade movie review intelligence platform with real-time sentiment tracking, DistilBERT NLP inference, a Letterboxd-inspired discovery UI, and an executive analytics dashboard.',
+    stack: ['React 18', 'TypeScript', 'Node.js', 'DistilBERT AI', 'Prisma', 'MySQL'],
+    github: 'https://github.com/manishworkss/SentixAi',
+    live: 'https://github.com/manishworkss/SentixAi',
+    image: '/projects/sentixai.png',
   },
 ];
 
