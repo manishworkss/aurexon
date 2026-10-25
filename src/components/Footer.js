@@ -64,8 +64,14 @@ export default function Footer() {
         {/* Top Header Row */}
         <div className={styles.topRow}>
           <div className={styles.brandInfo}>
-            <span className={styles.logo}>MANISH KUMAR</span>
-            <p className={styles.tagline}>Java Backend Developer & AI Enthusiast</p>
+            <div className={styles.logoRow}>
+              <span className={styles.logo}>MANISH KUMAR</span>
+              <span className={styles.statusBadge}>Available for Hire</span>
+            </div>
+            <p className={styles.tagline}>Java Backend Developer &amp; AI Systems Engineer</p>
+            <p className={styles.subTagline}>
+              Specializing in Spring Boot microservices, LLM inference pipelines, and scalable full-stack web platforms.
+            </p>
           </div>
 
           <nav className={styles.navLinks}>
@@ -73,7 +79,11 @@ export default function Footer() {
             <Link href="#experience" className={styles.navLink}>Experience</Link>
             <Link href="#projects" className={styles.navLink}>Projects</Link>
             <Link href="#certifications" className={styles.navLink}>Certificates</Link>
+            <Link href="#opensource" className={styles.navLink}>Open Source</Link>
             <Link href="#contact" className={styles.navLink}>Contact</Link>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumePill}>
+              Resume ↗
+            </a>
           </nav>
         </div>
 
@@ -111,7 +121,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Manish Kumar. All rights reserved.
           </p>
           <p className={styles.builtText}>
-            Designed, Built & Deployed Solo by Manish Kumar
+            Designed, Built &amp; Deployed Solo by Manish Kumar
           </p>
         </div>
       </div>
