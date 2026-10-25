@@ -33,37 +33,24 @@ function ScrollIcon({ size = 12 }) {
 
 const categories = [
   { id: 'all', label: 'Websites' },
-  { id: 'wordpress', label: 'WordPress Websites' },
   { id: 'coding', label: 'Coding Websites' },
+  { id: 'wordpress', label: 'WordPress Websites' },
   { id: 'seo', label: 'SEO Performance' },
 ];
 
 const workItems = [
-  /* WordPress Websites */
-  {
-    id: 'mtadmc-travel',
-    title: 'MTA Destination Management',
-    category: 'wordpress',
-    categoryLabel: 'WordPress',
-    domain: 'mtadmc.com',
-    image: '/experience/mtadmc_scroll.webp',
-    live: 'https://mtadmc.com',
-    metric: 'Under 1.4s Load Time',
-    tags: ['WordPress', 'Custom Theme', 'Yoast SEO'],
-    featuredSeo: true,
-  },
-  {
-    id: 'property-hub-sydney',
-    title: 'Property Hub Sydney',
-    category: 'wordpress',
-    categoryLabel: 'WordPress',
-    domain: 'propertyhubsydney.com.au',
-    image: '/experience/property_hub_scroll.webp',
-    live: 'https://propertyhubsydney.com.au',
-    metric: '+35% Lead Inquiries',
-    tags: ['WordPress', 'Elementor Pro', 'Lead Funnel'],
-  },
   /* Coding Websites */
+  {
+    id: 'futureforge-ai',
+    title: 'FutureForge AI SaaS Platform',
+    category: 'coding',
+    categoryLabel: 'Coding Website',
+    domain: 'futureforge-ai-sage.vercel.app',
+    image: '/experience/futureforge_scroll.webp',
+    live: 'https://futureforge-ai-sage.vercel.app/',
+    metric: 'Instant AI (<400ms)',
+    tags: ['React 18', 'Spring Boot', 'MySQL'],
+  },
   {
     id: 'mkr-college',
     title: 'M.K.R. College Official Portal',
@@ -120,16 +107,30 @@ const workItems = [
     metric: '+40% Fast Checkout',
     tags: ['Next.js', 'React', 'Package Builder'],
   },
+
+  /* WordPress Websites */
   {
-    id: 'futureforge-ai',
-    title: 'FutureForge AI SaaS Platform',
-    category: 'coding',
-    categoryLabel: 'Coding Website',
-    domain: 'futureforge-ai-sage.vercel.app',
-    image: '/experience/futureforge_scroll.webp',
-    live: 'https://futureforge-ai-sage.vercel.app/',
-    metric: 'Instant AI (<400ms)',
-    tags: ['React 18', 'Spring Boot', 'MySQL'],
+    id: 'mtadmc-travel',
+    title: 'MTA Destination Management',
+    category: 'wordpress',
+    categoryLabel: 'WordPress',
+    domain: 'mtadmc.com',
+    image: '/experience/mtadmc_scroll.webp',
+    live: 'https://mtadmc.com',
+    metric: 'Under 1.4s Load Time',
+    tags: ['WordPress', 'Custom Theme', 'Yoast SEO'],
+    featuredSeo: true,
+  },
+  {
+    id: 'property-hub-sydney',
+    title: 'Property Hub Sydney',
+    category: 'wordpress',
+    categoryLabel: 'WordPress',
+    domain: 'propertyhubsydney.com.au',
+    image: '/experience/property_hub_scroll.webp',
+    live: 'https://propertyhubsydney.com.au',
+    metric: '+35% Lead Inquiries',
+    tags: ['WordPress', 'Elementor Pro', 'Lead Funnel'],
   },
 
   /* SEO Performance */
