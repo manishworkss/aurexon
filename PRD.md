@@ -1,8 +1,8 @@
-# PRD.md - My_Portfolio Milestone 2: Interactive Modals & Polish
+# PRD.md - Milestone 3: 3D Animated Hero Engine
 
-## Status: Completed (Milestone 2)
-- [x] 1. Resolve ID collision in Projects.js by renaming internal anchor from id="opensource" to id="hackathons".
-- [x] 2. Build interactive Project Architecture & Deep Preview Modal in Projects.js with key metrics, tech stack tags, and demo links.
-- [x] 3. Add modal styles to Projects.module.css with frosted glass backdrop and smooth Framer Motion transitions.
-- [x] 4. Add robust mailto fallback button and instant message copy to Contact.js.
-- [x] 5. Run CodeRabbit quality & production build verification (zero lint errors, Turbopack compile).
+## Status: Completed (Milestone 3)
+- [x] 1. Architect 3D Hero layout with Framer Motion spring physics (useMotionValue, useSpring, useTransform).
+- [x] 2. Build multi-layer 3D holographic portrait card with translateZ depth layers (floating AI badge, performance pill, and dynamic sheen reflection).
+- [x] 3. Implement 3D floating geometric polyhedrons and interactive tech glyphs with continuous 3D rotation.
+- [x] 4. Add Safari/iOS hardware acceleration (-webkit-transform-style: preserve-3d, backface-visibility: hidden) and mobile touch/autonomous floating loops.
+- [x] 5. Run CodeRabbit quality audit: verify 60fps performance, check cross-platform compatibility, test mobile view, and build with Turbopack.
