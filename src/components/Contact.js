@@ -322,7 +322,17 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            {errorMsg && <p className={styles.errorMessage}>{errorMsg}</p>}
+            {errorMsg && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                <p className={styles.errorMessage}>{errorMsg}</p>
+                <a
+                  href={"mailto:bcawithmanish0008@gmail.com?subject=" + encodeURIComponent(formData.subject || "Portfolio Inquiry") + "&body=" + encodeURIComponent(formData.message || "")}
+                  className={styles.mailtoFallbackBtn}
+                >
+                  <span>Open Directly in Email Client ✉️</span>
+                </a>
+              </div>
+            )}
 
             <button type="submit" disabled={loading} className={styles.submitBtn}>
               {loading

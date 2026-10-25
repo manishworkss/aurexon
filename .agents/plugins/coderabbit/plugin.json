@@ -1,0 +1,5 @@
+{
+  "name": "coderabbit",
+  "description": "CodeRabbit AI code reviewer plugin for automated high-signal PR and branch reviews, architectural pattern enforcement, auto-remediation goals, and review feedback learning.",
+  "version": "1.0.0"
+}

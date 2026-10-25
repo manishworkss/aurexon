@@ -1,0 +1,5 @@
+{
+  "name": "ralph-loop",
+  "description": "Ralph Loop autonomous task execution harness for Antigravity. Externalizes state to PRD.md & progress.txt, prevents context rot through fresh-context iterations, and executes tasks to completion without human intervention.",
+  "version": "1.0.0"
+}

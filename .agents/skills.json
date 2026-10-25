@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "path": ".agents/plugins/coderabbit/skills"
+    },
+    {
+      "path": ".agents/plugins/ralph-loop/skills"
+    },
+    {
+      "path": ".agents/plugins/get-shit-done/skills"
+    },
+    {
+      "path": ".agents/skills"
+    }
+  ]
+}

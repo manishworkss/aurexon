@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "path": ".agents/plugins/coderabbit"
+    },
+    {
+      "path": ".agents/plugins/ralph-loop"
+    },
+    {
+      "path": ".agents/plugins/get-shit-done"
+    }
+  ]
+}
