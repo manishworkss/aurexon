@@ -31,7 +31,7 @@ export const viewport = {
 }
 
 export const metadata = {
-  title: 'Manish Kumar | Java Backend & AI Developer',
+  title: 'Manish Kumar — Portfolio',
   description: 'Portfolio of Manish Kumar — Java Backend Developer & AI Enthusiast. Building robust, scalable backend systems and intelligent AI solutions with Spring Boot, Java, and modern web technologies.',
   keywords: ['Java Developer', 'Backend Developer', 'AI Enthusiast', 'Spring Boot', 'Portfolio', 'Manish Kumar'],
   authors: [{ name: 'Manish Kumar' }],
@@ -41,7 +41,7 @@ export const metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Manish Kumar | Java Backend & AI Developer',
+    title: 'Manish Kumar — Portfolio',
     description: 'Portfolio of Manish Kumar — Java Backend Developer & AI Enthusiast.',
     type: 'website',
   },
