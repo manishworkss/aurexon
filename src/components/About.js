@@ -12,30 +12,28 @@ export default function About() {
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className={styles.heading}>ABOUT ME</h2>
+        <h2 className={styles.heading}>ABOUT AUREXON</h2>
         <p className={styles.description}>
-          I&apos;m a Java Backend Developer and AI Enthusiast based in Vadodara,
-          Gujarat. I enjoy building things that actually work — from college
-          websites handling real traffic to SaaS platforms with AI under the hood.
-          I work mostly with Java, Spring Boot, React, Node.js, and WordPress.
-          I&apos;ve solved 200+ DSA problems on LeetCode and actively contribute
-          to open-source projects. Always looking for interesting problems to
-          pick apart and ship something useful.
+          Aurexon is a next-generation software engineering studio and digital product lab.
+          We build high-throughput enterprise backends, intelligent AI reasoning pipelines,
+          and modern full-stack web platforms. From high-traffic institutional portals and
+          mission-critical cloud backends to autonomous SaaS applications, we architect resilient
+          digital infrastructure engineered for speed, security, and scale.
         </p>
 
         {/* Highlight Credential Pills */}
         <div className={styles.highlightPills}>
-          <a href="#certifications" className={styles.certBadgePill}>
-            🏅 NPTEL Certified (IIT Kharagpur)
+          <a href="#experience" className={styles.certBadgePill}>
+            ⚡ Sub-400ms AI Reasoning Latency
           </a>
-          <a href="#certifications" className={styles.certBadgePill}>
-            🏅 HackerRank React Developer
+          <a href="#experience" className={styles.certBadgePill}>
+            🛡️ Enterprise Spring Boot &amp; Microservices
           </a>
-          <a href="#certifications" className={styles.certBadgePill}>
-            🏅 HackerRank Software Engineer
+          <a href="#experience" className={styles.certBadgePill}>
+            🚀 High-Traffic Production Deployments
           </a>
-          <a href="#certifications" className={styles.certBadgePill}>
-            🏅 CodeAlpha Java Intern (LOR)
+          <a href="#experience" className={styles.certBadgePill}>
+            🌐 Modern Scalable Cloud Architecture
           </a>
         </div>
       </motion.div>

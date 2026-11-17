@@ -31,18 +31,20 @@ export const viewport = {
 }
 
 export const metadata = {
-  title: 'Manish Kumar — Portfolio',
-  description: 'Portfolio of Manish Kumar — Java Backend Developer & AI Enthusiast. Building robust, scalable backend systems and intelligent AI solutions with Spring Boot, Java, and modern web technologies.',
-  keywords: ['Java Developer', 'Backend Developer', 'AI Enthusiast', 'Spring Boot', 'Portfolio', 'Manish Kumar'],
-  authors: [{ name: 'Manish Kumar' }],
+  title: 'Aurexon — Next-Gen Software & AI Systems',
+  description: 'Aurexon is a hybrid technology company engineering enterprise cloud backends, intelligent AI systems, and scalable full-stack web platforms.',
+  keywords: ['Aurexon', 'Aurexon Technologies', 'Software Development Company', 'AI Systems', 'Spring Boot', 'Next.js', 'Enterprise Backend', 'SaaS Products'],
+  authors: [{ name: 'Aurexon Technologies' }],
   icons: {
     icon: '/icon.png',
     shortcut: '/favicon.ico',
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Manish Kumar — Portfolio',
-    description: 'Portfolio of Manish Kumar — Java Backend Developer & AI Enthusiast.',
+    title: 'Aurexon — Next-Gen Software & AI Systems',
+    description: 'Engineering enterprise cloud backends, intelligent AI systems, and scalable full-stack web platforms.',
+    url: 'https://www.aurexon.tech',
+    siteName: 'Aurexon Technologies',
     type: 'website',
   },
 }

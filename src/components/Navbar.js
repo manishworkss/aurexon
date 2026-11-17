@@ -31,11 +31,9 @@ function LeetcodeIcon({ size = 16 }) {
 
 const navItems = [
   { label: 'Home', href: '#hero' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Certificates', href: '#certifications' },
-  { label: 'Open Source', href: '#opensource' },
-  { label: 'Contact Me', href: '#contact' },
+  { label: 'About', href: '#about' },
+  { label: 'Work', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
@@ -49,7 +47,12 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/* Left/Center: Nav links */}
+        {/* Brand Logo */}
+        <Link href="#hero" className={styles.brandLogo}>
+          AUREXON
+        </Link>
+
+        {/* Center: Nav links */}
         <nav className={styles.desktopNav}>
           {navItems.map((item) => (
             <Link key={item.label} href={item.href} className={styles.navLink}>
@@ -58,27 +61,22 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right: Social Icons placed just before Resume Pill Button & Mobile Toggle */}
+        {/* Right: Social & Contact Action */}
         <div className={styles.rightActions}>
           <div className={styles.socials}>
-            <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
+            <a href="https://github.com/manishworkss/aurexon" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
               <GithubIcon size={16} />
             </a>
-            <a href="https://www.linkedin.com/in/manish-kumar-37349633a/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/aurexon" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
               <LinkedinIcon size={16} />
-            </a>
-            <a href="https://leetcode.com/u/Manishkr92/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LeetCode">
-              <LeetcodeIcon size={16} />
             </a>
           </div>
 
           <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className={styles.resumeBtn}
           >
-            Resume
+            Get in Touch
           </a>
 
           <button

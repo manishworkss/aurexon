@@ -19,13 +19,7 @@ function LinkedinIcon({ size = 18 }) {
   );
 }
 
-function LeetcodeIcon({ size = 18 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.17 6.2a1.374 1.374 0 0 0-.416.973v1.545c0 .365.145.714.405.973l.01.01a1.374 1.374 0 0 0 1.944 0l5.35-5.326a1.374 1.374 0 0 0 0-1.944L13.483 0zM5.38 8.136a1.374 1.374 0 0 0-.973.405L.405 12.543a1.374 1.374 0 0 0 0 1.944l4.002 4.002a1.374 1.374 0 0 0 1.944 0l3.992-3.992a1.374 1.374 0 0 0 0-1.944l-4.002-4.002a1.374 1.374 0 0 0-.961-.415zm13.24 0a1.374 1.374 0 0 0-.973.405l-4.002 4.002a1.374 1.374 0 0 0 0 1.944l3.992 3.992a1.374 1.374 0 0 0 1.944 0l4.002-4.002a1.374 1.374 0 0 0 0-1.944l-4.002-4.002a1.374 1.374 0 0 0-.961-.415z"/>
-    </svg>
-  );
-}
+
 
 function MailIcon({ size = 18 }) {
   return (
@@ -65,24 +59,22 @@ export default function Footer() {
         <div className={styles.topRow}>
           <div className={styles.brandInfo}>
             <div className={styles.logoRow}>
-              <span className={styles.logo}>MANISH KUMAR</span>
-              <span className={styles.statusBadge}>Available for Hire</span>
+              <span className={styles.logo}>AUREXON</span>
+              <span className={styles.statusBadge}>Accepting New Projects</span>
             </div>
-            <p className={styles.tagline}>Java Backend Developer &amp; AI Systems Engineer</p>
+            <p className={styles.tagline}>Enterprise Software Engineering &amp; AI Systems</p>
             <p className={styles.subTagline}>
-              Specializing in Spring Boot microservices, LLM inference pipelines, and scalable full-stack web platforms.
+              Architecting scalable cloud backends, intelligent AI reasoning workflows, and modern web applications.
             </p>
           </div>
 
           <nav className={styles.navLinks}>
             <Link href="#hero" className={styles.navLink}>Home</Link>
-            <Link href="#experience" className={styles.navLink}>Experience</Link>
-            <Link href="#projects" className={styles.navLink}>Projects</Link>
-            <Link href="#certifications" className={styles.navLink}>Certificates</Link>
-            <Link href="#opensource" className={styles.navLink}>Open Source</Link>
+            <Link href="#about" className={styles.navLink}>About</Link>
+            <Link href="#experience" className={styles.navLink}>Production Work</Link>
             <Link href="#contact" className={styles.navLink}>Contact</Link>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumePill}>
-              Resume ↗
+            <a href="#contact" className={styles.resumePill}>
+              Get in Touch ↗
             </a>
           </nav>
         </div>
@@ -90,16 +82,13 @@ export default function Footer() {
         {/* Middle Social Bar */}
         <div className={styles.middleRow}>
           <div className={styles.socials}>
-            <a href="https://github.com/manishworkss" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="GitHub">
+            <a href="https://github.com/manishworkss/aurexon" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="GitHub">
               <GithubIcon size={18} />
             </a>
-            <a href="https://www.linkedin.com/in/manish-kumar-37349633a/" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/aurexon" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="LinkedIn">
               <LinkedinIcon size={18} />
             </a>
-            <a href="https://leetcode.com/u/Manishkr92/" target="_blank" rel="noopener noreferrer" className={styles.socialCircle} aria-label="LeetCode">
-              <LeetcodeIcon size={18} />
-            </a>
-            <a href="mailto:bcawithmanish0008@gmail.com" className={styles.socialCircle} aria-label="Gmail">
+            <a href="mailto:contact@aurexon.tech" className={styles.socialCircle} aria-label="Official Email">
               <MailIcon size={18} />
             </a>
             <a href="tel:+918271735190" className={styles.socialCircle} aria-label="Phone">
@@ -118,10 +107,10 @@ export default function Footer() {
         {/* Bottom Credits Row */}
         <div className={styles.bottomRow}>
           <p className={styles.copyText}>
-            © {new Date().getFullYear()} Manish Kumar. All rights reserved.
+            © {new Date().getFullYear()} Aurexon Technologies. All rights reserved.
           </p>
           <p className={styles.builtText}>
-            Designed, Built &amp; Deployed Solo by Manish Kumar
+            Engineering Next-Generation Software &amp; AI Systems
           </p>
         </div>
       </div>

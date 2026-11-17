@@ -12,19 +12,19 @@ const leftSkills = [
   'Python',
   'REST APIs',
   'React.js',
-  'Node.js',
+  'Next.js',
   'MySQL',
-  'WordPress',
+  'Cloud Systems',
 ];
 
 const rightSkills = [
   'RAG & Embeddings',
-  'NLP Assistant',
+  'NLP Systems',
   'FastAPI',
-  'Git & GitHub',
-  'Postman',
-  'Firebase',
-  'LeetCode 200+',
+  'Microservices',
+  'Docker & CI/CD',
+  'API Security',
+  'Enterprise SLA',
 ];
 
 function subscribeTouch(callback) {
@@ -110,7 +110,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <span className={styles.aiDot} />
-              <span>Full-Stack &amp; AI Systems Engineer</span>
+              <span>Enterprise Software &amp; AI Systems</span>
             </motion.div>
 
             <motion.h1 
@@ -119,7 +119,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
             >
-              HEY, I&apos;M MANISH
+              WE ARE AUREXON
             </motion.h1>
 
             <motion.p 
@@ -128,7 +128,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
             >
-              Backend Developer &amp; AI Engineer specializing in Java, Spring Boot, REST APIs, and LLM reasoning workflows. Building production-ready applications, scalable architectures, and autonomous AI agents.
+              Engineering robust Java/Spring Boot enterprise backends, intelligent AI reasoning pipelines, and high-performance digital platforms. We transform complex technical requirements into scalable, production-grade software.
             </motion.p>
 
             <motion.div 
@@ -137,14 +137,12 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <span>📄 Want the full story? </span>
+              <span>🚀 Scalable Architecture &amp; SaaS Products </span>
               <a 
-                href="/resume.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="#experience" 
                 className={styles.resumeLink}
               >
-                Just visit my resume to check →
+                Explore Production Systems →
               </a>
             </motion.div>
 
@@ -155,9 +153,9 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.35 }}
             >
               <a href="#contact" className={styles.contactBtn}>
-                Contact Me
+                Get in Touch
               </a>
-              <a href="#projects" className={styles.exploreProjectsBtn}>
+              <a href="#experience" className={styles.exploreProjectsBtn}>
                 Explore Work ▾
               </a>
             </motion.div>
@@ -262,14 +260,23 @@ export default function Hero() {
         >
           {/* Card Body with 3D Depth Layers */}
           <div className={styles.portraitWrapper}>
-            <Image
-              src="/profile-natural.png"
-              alt="Manish Kumar"
-              width={480}
-              height={560}
-              priority
-              className={styles.portraitImage}
-            />
+            <div className={styles.brandVisualCenter}>
+              <div className={styles.brandRingOuter}>
+                <div className={styles.brandRingInner}>
+                  <div className={styles.brandCoreEmblem}>
+                    <span className={styles.brandEmblemText}>AX</span>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.brandCoreLabel}>
+                <span className={styles.brandCoreName}>AUREXON</span>
+                <span className={styles.brandCoreTag}>SYSTEMS &amp; AI LAB</span>
+              </div>
+              <div className={styles.brandStatusPill}>
+                <div className={styles.badgePulseDot} />
+                <span>ONLINE • 99.9% UPTIME</span>
+              </div>
+            </div>
 
             {/* Subtle 3D dynamic specular sheen */}
             <div className={styles.specularGlare} />
@@ -297,8 +304,8 @@ export default function Hero() {
             >
               <span className={styles.starIcon}>★</span>
               <div>
-                <span className={styles.badgeLabel}>LeetCode 200+</span>
-                <span className={styles.badgeSub}>Full-Stack &amp; REST APIs</span>
+                <span className={styles.badgeLabel}>Enterprise SLA</span>
+                <span className={styles.badgeSub}>Sub-400ms · High Scalability</span>
               </div>
             </motion.div>
           </div>

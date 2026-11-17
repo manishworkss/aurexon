@@ -85,7 +85,7 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/bcawithmanish0008@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/contact@aurexon.tech', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -143,24 +143,24 @@ export default function Contact() {
         {/* Left Column: Authentic Brand Profile Cards */}
         <div className={styles.leftColumn}>
           <div className={styles.channelsList}>
-            {/* Gmail */}
+            {/* Business Email */}
             <a
-              href="mailto:bcawithmanish0008@gmail.com"
+              href="mailto:contact@aurexon.tech"
               className={styles.channelItem}
             >
               <div className={`${styles.iconCircle} ${styles.gmailBg}`}>
                 <GmailLogoIcon size={18} />
               </div>
               <div className={styles.channelInfo}>
-                <span className={styles.channelTitle}>Gmail</span>
-                <span className={styles.channelSubtext}>bcawithmanish0008@gmail.com</span>
+                <span className={styles.channelTitle}>Official Email</span>
+                <span className={styles.channelSubtext}>contact@aurexon.tech</span>
               </div>
               <div className={styles.externalArrow}>
                 <ArrowUpRight size={16} />
               </div>
             </a>
 
-            {/* Mobile No */}
+            {/* Direct Phone */}
             <a
               href="tel:+918271735190"
               className={styles.channelItem}
@@ -169,7 +169,7 @@ export default function Contact() {
                 <PhoneIcon size={18} />
               </div>
               <div className={styles.channelInfo}>
-                <span className={styles.channelTitle}>Mobile No</span>
+                <span className={styles.channelTitle}>Direct Line</span>
                 <span className={styles.channelSubtext}>+91 8271735190</span>
               </div>
               <div className={styles.externalArrow}>
@@ -179,7 +179,7 @@ export default function Contact() {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/manish-kumar-37349633a/"
+              href="https://www.linkedin.com/company/aurexon"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.channelItem}
@@ -189,7 +189,7 @@ export default function Contact() {
               </div>
               <div className={styles.channelInfo}>
                 <span className={styles.channelTitle}>LinkedIn</span>
-                <span className={styles.channelSubtext}>manish-kumar-37349633a</span>
+                <span className={styles.channelSubtext}>company/aurexon</span>
               </div>
               <div className={styles.externalArrow}>
                 <ArrowUpRight size={16} />
@@ -198,7 +198,7 @@ export default function Contact() {
 
             {/* GitHub */}
             <a
-              href="https://github.com/manishworkss"
+              href="https://github.com/manishworkss/aurexon"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.channelItem}
@@ -207,27 +207,8 @@ export default function Contact() {
                 <GithubLogoIcon size={18} />
               </div>
               <div className={styles.channelInfo}>
-                <span className={styles.channelTitle}>GitHub</span>
-                <span className={styles.channelSubtext}>manishworkss</span>
-              </div>
-              <div className={styles.externalArrow}>
-                <ArrowUpRight size={16} />
-              </div>
-            </a>
-
-            {/* LeetCode */}
-            <a
-              href="https://leetcode.com/u/Manishkr92/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.channelItem}
-            >
-              <div className={`${styles.iconCircle} ${styles.leetcodeBg}`}>
-                <LeetcodeLogoIcon size={18} />
-              </div>
-              <div className={styles.channelInfo}>
-                <span className={styles.channelTitle}>LeetCode</span>
-                <span className={styles.channelSubtext}>Manishkr92</span>
+                <span className={styles.channelTitle}>GitHub Org</span>
+                <span className={styles.channelSubtext}>aurexon</span>
               </div>
               <div className={styles.externalArrow}>
                 <ArrowUpRight size={16} />
@@ -326,7 +307,7 @@ export default function Contact() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '0.75rem' }}>
                 <p className={styles.errorMessage}>{errorMsg}</p>
                 <a
-                  href={"mailto:bcawithmanish0008@gmail.com?subject=" + encodeURIComponent(formData.subject || "Portfolio Inquiry") + "&body=" + encodeURIComponent(formData.message || "")}
+                  href={"mailto:contact@aurexon.tech?subject=" + encodeURIComponent(formData.subject || "Project Inquiry") + "&body=" + encodeURIComponent(formData.message || "")}
                   className={styles.mailtoFallbackBtn}
                 >
                   <span>Open Directly in Email Client ✉️</span>
@@ -338,7 +319,7 @@ export default function Contact() {
               {loading
                 ? 'Sending Message...'
                 : submitted
-                ? '✓ Delivered to bcawithmanish0008@gmail.com!'
+                ? '✓ Delivered to contact@aurexon.tech!'
                 : '+ Send Message'}
             </button>
           </form>
