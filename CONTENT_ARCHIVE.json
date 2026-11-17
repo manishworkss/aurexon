@@ -1,0 +1,279 @@
+{
+  "brand": {
+    "name": "Aurexon Technologies",
+    "shortName": "Aurexon",
+    "domain": "aurexon.tech",
+    "url": "https://www.aurexon.tech",
+    "tagline": "Next-Gen Software Engineering & Autonomous AI Systems",
+    "mission": "Architecting robust Java/Spring Boot enterprise backends, intelligent AI reasoning pipelines, and scalable digital solutions for modern businesses."
+  },
+  "contact": {
+    "email": "contact@aurexon.tech",
+    "personalEmailArchive": "bcawithmanish0008@gmail.com",
+    "phone": "+91 8271735190",
+    "github": "https://github.com/manishworkss/aurexon",
+    "linkedin": "https://www.linkedin.com/company/aurexon",
+    "personalLinkedinArchive": "https://www.linkedin.com/in/manish-kumar-37349633a/",
+    "leetcodeArchive": "https://leetcode.com/u/Manishkr92/"
+  },
+  "skills": {
+    "coreBackend": [
+      "Java",
+      "Spring Boot",
+      "AI Agents",
+      "Python",
+      "REST APIs",
+      "React.js",
+      "Next.js",
+      "MySQL",
+      "Cloud Systems"
+    ],
+    "aiAndCloud": [
+      "RAG & Embeddings",
+      "NLP Systems",
+      "FastAPI",
+      "Microservices",
+      "Docker & CI/CD",
+      "API Security",
+      "Enterprise SLA"
+    ]
+  },
+  "experienceWebsites": [
+    {
+      "id": "futureforge-ai",
+      "title": "FutureForge AI SaaS Platform",
+      "category": "coding",
+      "categoryLabel": "Coding Website / SaaS",
+      "domain": "futureforge-ai-sage.vercel.app",
+      "image": "/experience/futureforge_scroll.webp",
+      "live": "https://futureforge-ai-sage.vercel.app/",
+      "metric": "Instant AI (<400ms)",
+      "tags": ["React 18", "Spring Boot", "MySQL", "Groq Llama-3.3"]
+    },
+    {
+      "id": "mkr-college",
+      "title": "M.K.R. College Official Portal",
+      "category": "coding",
+      "categoryLabel": "Institutional Website",
+      "domain": "mkrcollege.com",
+      "image": "/experience/mkrcollege_scroll.webp",
+      "live": "https://mkrcollege.com",
+      "metric": "Data Latency <300ms",
+      "tags": ["React.js", "Node.js", "REST APIs"]
+    },
+    {
+      "id": "college-erp",
+      "title": "M.K.R. College ERP & Management System",
+      "category": "coding",
+      "categoryLabel": "ERP System",
+      "domain": "college.mkrcollege.com",
+      "image": "/experience/college_erp_scroll.webp",
+      "live": "https://college.mkrcollege.com/site/login",
+      "metric": "3,200+ Student Records",
+      "tags": ["PHP / MySQL", "Role Auth", "Student Portal"]
+    },
+    {
+      "id": "sukuae-vfx",
+      "title": "Sudhakar VFX & Animation Studio",
+      "category": "coding",
+      "categoryLabel": "Creative Agency Portal",
+      "domain": "sukuae.in",
+      "image": "/experience/sukuae_scroll.webp",
+      "live": "https://sukuae.in",
+      "metric": "0 to 150+ in 30 Days",
+      "tags": ["React.js", "Dark Glassmorphic", "WebP"],
+      "featuredSeo": true
+    },
+    {
+      "id": "astra-salon",
+      "title": "Astra Salon Toronto",
+      "category": "coding",
+      "categoryLabel": "Brand Experience",
+      "domain": "astra-five-theta.vercel.app",
+      "image": "/experience/astra_salon_scroll.webp",
+      "live": "https://astra-five-theta.vercel.app/",
+      "metric": "Sub-second FCP (0.7s)",
+      "tags": ["React.js", "Vite", "Luxury Branding"]
+    },
+    {
+      "id": "car-detailing",
+      "title": "Elite Auto Detailing & Car Spa",
+      "category": "coding",
+      "categoryLabel": "E-Commerce / Booking",
+      "domain": "car-detailing-demo.vercel.app",
+      "image": "/experience/car_detailing_scroll.webp",
+      "live": "https://car-detailing-demo.vercel.app/",
+      "metric": "+40% Fast Checkout",
+      "tags": ["Next.js", "React", "Package Builder"]
+    },
+    {
+      "id": "mtadmc-travel",
+      "title": "MTA Destination Management",
+      "category": "wordpress",
+      "categoryLabel": "Corporate Portal",
+      "domain": "mtadmc.com",
+      "image": "/experience/mtadmc_scroll.webp",
+      "live": "https://mtadmc.com",
+      "metric": "Under 1.4s Load Time",
+      "tags": ["WordPress", "Custom Theme", "Yoast SEO"],
+      "featuredSeo": true
+    },
+    {
+      "id": "property-hub-sydney",
+      "title": "Property Hub Sydney",
+      "category": "wordpress",
+      "categoryLabel": "Real Estate Marketplace",
+      "domain": "propertyhubsydney.com.au",
+      "image": "/experience/property_hub_scroll.webp",
+      "live": "https://propertyhubsydney.com.au",
+      "metric": "+35% Lead Inquiries",
+      "tags": ["WordPress", "Elementor Pro", "Lead Funnel"]
+    },
+    {
+      "id": "seo-audit-suite",
+      "title": "100/100 Core Web Vitals & PageSpeed Suite",
+      "category": "seo",
+      "categoryLabel": "SEO Engineering",
+      "domain": "pagespeed.web.dev",
+      "image": "/experience/seo_performance_scroll.webp",
+      "live": "https://mtadmc.com",
+      "metric": "99/100 PageSpeed & SEO",
+      "tags": ["Core Web Vitals", "0.5s FCP", "0.9s LCP"]
+    }
+  ],
+  "productsAndProjects": [
+    {
+      "title": "FutureForge AI",
+      "subtitle": "Intelligent SaaS Career Platform",
+      "category": "AI / SAAS",
+      "description": "An autonomous SaaS career platform leveraging LLM reasoning (Groq Llama-3.3 70B) for multi-week milestone progression, AI candidate evaluation, and real-time mentorship.",
+      "architecture": [
+        "Spring Boot REST backend with MySQL relational schema and secure JWT authentication.",
+        "Groq Llama-3.3 70B LLM integration with sub-400ms contextual inference.",
+        "Personalized milestone generator dynamically adapting to student course progressions.",
+        "Responsive React 18 frontend with dark/light glassmorphic UI architecture."
+      ],
+      "metric": "< 400ms AI Response Time",
+      "stack": ["React 18", "Spring Boot", "MySQL", "Groq Llama-3.3", "REST APIs"],
+      "github": "https://github.com/manishworkss/Futureforge-ai",
+      "live": "https://futureforge-ai-sage.vercel.app/",
+      "image": "/projects/futureforge.png"
+    },
+    {
+      "title": "IntelliBot Pro",
+      "subtitle": "Advanced Java AI Chatbot",
+      "category": "JAVA / NLP",
+      "description": "An advanced Java AI Chatbot featuring a responsive desktop Swing GUI, linear algebra & calculus equation solver engine, and multi-turn dialogue management.",
+      "architecture": [
+        "Pure Java OOP architecture utilizing modular design patterns and clean state management.",
+        "Native equation solver capable of symbolic simplification and step-by-step calculus output.",
+        "Contextual conversation tracker maintaining multi-turn memory without remote server dependencies.",
+        "Custom styled Swing graphical interface with keyboard navigation shortcuts."
+      ],
+      "metric": "100% Offline Capable",
+      "stack": ["Java", "Swing GUI", "NLP", "OOP", "Spring Boot"],
+      "github": "https://github.com/manishworkss/CodeAlpha-Artificial-IntelligenceChatbot",
+      "live": "https://intellibot-pro.vercel.app/",
+      "image": "/projects/intellibot.png"
+    },
+    {
+      "title": "SentixAI",
+      "subtitle": "AI-Powered Movie Sentiment Intelligence",
+      "category": "MACHINE LEARNING",
+      "description": "An enterprise-grade movie review intelligence platform with real-time sentiment tracking, DistilBERT NLP inference, a Letterboxd-inspired discovery UI, and an executive analytics dashboard.",
+      "architecture": [
+        "Hugging Face DistilBERT fine-tuned model pipeline classifying complex sentiment polarity.",
+        "FastAPI microservice interfacing with Prisma ORM and MySQL database cluster.",
+        "Real-time aggregation engine generating sentiment distribution analytics and ratings trends.",
+        "Interactive React 18 interface with animated charts and filterable catalog."
+      ],
+      "metric": "94.2% Sentiment Accuracy",
+      "stack": ["React 18", "TypeScript", "Node.js", "DistilBERT AI", "Prisma", "MySQL"],
+      "github": "https://github.com/manishworkss/SentixAi",
+      "live": "https://github.com/manishworkss/SentixAi",
+      "image": "/projects/sentixai.png"
+    }
+  ],
+  "openSourceArchive": [
+    {
+      "title": "GirlScript Summer of Code (GSSoC)",
+      "subtitle": "Open Source Contributor",
+      "category": "OPEN SOURCE",
+      "description": "Actively contributed to open-source repositories during GSSoC. Authored merged pull requests resolving critical backend bugs, optimizing REST APIs, and improving developer documentation.",
+      "stack": ["Open Source", "GSSoC Contributor", "Git & GitHub", "Java", "React"],
+      "github": "https://github.com/manishworkss",
+      "live": "https://gssoc.girlscript.org/profile/6e801805-7cc0-46e4-b5f2-ed465c4eb7c8",
+      "image": "/projects/gssoc_banner.png"
+    },
+    {
+      "title": "PU Code Hackathon 3.0",
+      "subtitle": "Active Participant & Developer",
+      "category": "HACKATHON",
+      "description": "Participated in the PU Code Hackathon 3.0 organized by Parul University in collaboration with Vadodara Municipal Corporation. Fostered innovation and developed solutions under strict time constraints.",
+      "stack": ["Hackathon", "Problem Solving", "Innovation", "Team Collaboration"],
+      "image": "/projects/pu_hackathon.png"
+    }
+  ],
+  "certificationsArchive": [
+    {
+      "id": "nptel-cnip",
+      "title": "Computer Networks and Internet Protocol",
+      "issuer": "NPTEL, IIT Kharagpur (Govt. of India)",
+      "date": "Jan – Apr 2026",
+      "score": "54% Consolidated Score (12 Weeks)",
+      "credentialId": "NPTEL26CS35S2685404889",
+      "image": "/certificates/nptel_cnip-1.png",
+      "tags": ["Computer Networks", "TCP/IP", "IIT Kharagpur", "Routing & Protocols"]
+    },
+    {
+      "id": "hackerrank-react",
+      "title": "Frontend Developer (React)",
+      "issuer": "HackerRank",
+      "date": "07 May, 2026",
+      "score": "Passed Role Certification Test",
+      "credentialId": "C1285A58BC7D",
+      "image": "/certificates/hackerrank_react-1.png",
+      "tags": ["React.js", "Frontend Architecture", "HackerRank", "State Management"]
+    },
+    {
+      "id": "hackerrank-swe",
+      "title": "Software Engineer Intern",
+      "issuer": "HackerRank",
+      "date": "06 May, 2026",
+      "score": "Passed Role Certification Test",
+      "credentialId": "ED168F757AB9",
+      "image": "/certificates/hackerrank_swe-1.png",
+      "tags": ["Software Engineering", "Algorithms", "Data Structures", "HackerRank"]
+    },
+    {
+      "id": "nptel-db",
+      "title": "Introduction to Database Systems",
+      "issuer": "NPTEL, IIT Madras",
+      "date": "Jan-Apr 2025",
+      "score": "51% Consolidated Score (12-week course)",
+      "credentialId": "NPTEL25CS40S559700977",
+      "image": "/certificates/nptel_db.png",
+      "tags": ["Database Systems", "SQL", "Relational DB", "IIT Madras"]
+    },
+    {
+      "id": "codealpha-java",
+      "title": "Java Programming Internship",
+      "issuer": "CodeAlpha",
+      "date": "21st November 2025",
+      "score": "Virtual Internship Completion",
+      "credentialId": "CA/SE1/21389",
+      "image": "/certificates/codealpha_java-1.png",
+      "tags": ["Java", "Software Engineering", "CodeAlpha", "Internship"]
+    },
+    {
+      "id": "parul-db",
+      "title": "Modern Databases: Foundations and Hands-On with Relational, NoSQL & Cloud DBs",
+      "issuer": "Parul University",
+      "date": "July 2025 - Sept 2025",
+      "score": "16 Hours Value Added Course",
+      "credentialId": "Parul University Verified",
+      "image": "/certificates/parul_db.jpg",
+      "tags": ["Modern Databases", "NoSQL", "Cloud DBs", "Relational DBs"]
+    }
+  ]
+}
