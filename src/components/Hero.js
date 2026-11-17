@@ -1,7 +1,6 @@
 'use client';
 
 import { useSyncExternalStore, useRef } from 'react';
-import Image from 'next/image';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import styles from './Hero.module.css';
 
